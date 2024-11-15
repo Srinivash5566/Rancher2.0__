@@ -1,6 +1,7 @@
-// src/AuthContext.js
+// src/AuthContext.jsx
 import { createContext, useContext, useState, useEffect } from 'react';
 
+// Create the context
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -9,19 +10,22 @@ export const AuthProvider = ({ children }) => {
   // Check login state on load
   useEffect(() => {
     const token = localStorage.getItem('authToken');
-    setIsLoggedIn(!!token);
+    setIsLoggedIn(!!token); // If token exists, set isLoggedIn to true
   }, []);
 
+  // Login function to save token
   const login = (token) => {
     localStorage.setItem('authToken', token);
     setIsLoggedIn(true);
   };
 
+  // Logout function to clear token
   const logout = () => {
     localStorage.removeItem('authToken');
     setIsLoggedIn(false);
   };
 
+  // Return the provider with values
   return (
     <AuthContext.Provider value={{ isLoggedIn, login, logout }}>
       {children}
@@ -29,4 +33,5 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
+// Custom hook for consuming the context
 export const useAuth = () => useContext(AuthContext);

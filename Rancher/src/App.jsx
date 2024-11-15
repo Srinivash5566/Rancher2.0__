@@ -16,14 +16,15 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/HarvestingEngines" element={<HarvestingEngines />} />
-          <Route path='/Community' element={<Community />} />
-          <Route path='/LoginPage' element={<LoginPage />} />
-          <Route path='/RegisterPage' element={<RegisterPage />} />
-          <Route path='/:id' element={<CardInfo />} />
-          <Route path='*' element={<No404 />} />
+          <Route path="/Community" element={<Community />} />
+          <Route path="/LoginPage" element={<LoginPage />} />
+          <Route path="/RegisterPage" element={<RegisterPage />} />
+          <Route path="/:id" element={<CardInfo />} />
+          <Route path="*" element={<No404 />} />
         </Routes>
       </Router>
     </AuthProvider>
+
   );
 };
 
