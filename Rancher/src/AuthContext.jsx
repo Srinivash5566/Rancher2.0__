@@ -4,6 +4,7 @@ import { createContext, useContext, useState, useEffect } from 'react';
 // Create the context
 const AuthContext = createContext();
 
+// eslint-disable-next-line react/prop-types
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -34,5 +35,6 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-// Custom hook for consuming the context
+
+// eslint-disable-next-line react-refresh/only-export-components
 export const useAuth = () => useContext(AuthContext);
