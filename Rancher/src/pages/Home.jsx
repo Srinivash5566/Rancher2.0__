@@ -58,11 +58,11 @@ const Home = () => {
           <div
             key={index}
             className={component.home_card}
-            onClick={() => navigate(`/${index}`)}  // Assuming you want to navigate to a unique crop page
+            onClick={() => navigate(`/${crop.cropName}`)}  // Assuming you want to navigate to a unique crop page
           >
             <img src="https://placehold.co/600x400" alt="placeholder" />
             <div className={component.home_card_content}>
-              <h3>{crop.cropName}</h3>            
+              <h3>{crop.cropName}</h3>
               <h6>{crop.timePeriod.sowingTime}</h6>
             </div>
           </div>
