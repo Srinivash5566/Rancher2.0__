@@ -2,7 +2,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../api';
+import { GoArrowLeft } from 'react-icons/go';
 import { useAuth } from '../AuthContext';
+import styles from './stylesheet/component.module.css';
 import './stylesheet/LoginPage.css';
 
 const LoginPage = () => {
@@ -15,20 +17,33 @@ const LoginPage = () => {
     e.preventDefault();
     try {
       const response = await api.post('/login', { email, password });
-      const { token, username, email: userEmail } = response.data;
+      const { token, user } = response.data;
+      const { userName, email: userEmail } = user;
 
-      login(token, username, userEmail); // Pass token, username, and email to the login function
+      login(token, userName, userEmail);
 
-      navigate('/');
+      navigate(-1);
     } catch (error) {
-      console.error('Login error:', error.response ? error.response.data : error.message);
+      // Extract and display the error message from the response, if it exists
+      const errorMessage = error.response && error.response.data && error.response.data.message
+        ? error.response.data.message
+        : 'An unknown error occurred';
+      alert(`Login error: ${errorMessage}`);
     }
   };
+
+
 
   return (
     <div className="login-page">
       <div className="login-container">
-        <h2>Login</h2>
+        <div className="backButtonContainer">
+          <GoArrowLeft
+            className={`${styles.backButton}`}
+            onClick={() => navigate(-1)}
+          />
+          <h2>Login</h2>
+        </div>
         <form onSubmit={handleLogin}>
           <label>Email</label>
           <input

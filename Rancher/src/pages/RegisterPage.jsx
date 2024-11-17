@@ -1,30 +1,43 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../api';
+import { useAuth } from '../AuthContext';
 import './stylesheet/LoginPage.css';
+import styles from './stylesheet/component.module.css';
+import { GoArrowLeft } from 'react-icons/go';
 
 const RegisterPage = () => {
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-        const response = await api.post('/register', { userName, email, password });
-        console.log('Registration successful:', response.data);
-        navigate('/');  // Redirect to home after successful registration
+      const response = await api.post('/register', { userName, email, password });
+      const { token, user } = response.data;
+
+      login(token, user.userName, user.email);
+      navigate(-1);
     } catch (error) {
-        console.error('Registration error:', error.response ? error.response.data : error.message);
+      alert('Registration error:', error.response ? error.response.data : error.message);
     }
-};
+  };
+
 
 
   return (
     <div className="login-page">
       <div className="login-container">
-        <h2>Sign Up</h2>
+        <div className="backButtonContainer">
+          <GoArrowLeft
+            className={`${styles.backButton}`}
+            onClick={() => navigate(-1)}
+          />
+          <h2>Sign Up</h2>
+        </div>
         <form onSubmit={handleRegister}>
           <label>Username</label>
           <input

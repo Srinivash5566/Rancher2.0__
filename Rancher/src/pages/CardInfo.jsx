@@ -29,7 +29,7 @@ const CardInfo = () => {
       <nav className={`${styles.header}`}>
         <GoArrowLeft
           className={`${styles.backButton}`}
-          onClick={() => navigate('/')}
+          onClick={() => navigate(-1)}
         />
         <h1 className={styles.headerTitle}>Rancher</h1>
       </nav>

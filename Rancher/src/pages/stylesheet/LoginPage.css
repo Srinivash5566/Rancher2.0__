@@ -5,6 +5,10 @@ body {
   /* Consistent background */
 }
 
+.backButtonContainer {
+  display: flex;
+}
+
 .login-page {
   display: flex;
   justify-content: center;

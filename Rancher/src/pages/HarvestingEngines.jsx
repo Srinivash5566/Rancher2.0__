@@ -42,8 +42,8 @@ const HarvestingEngines = () => {
             <button className="log-out" onClick={handleLogout}>Log Out</button>
           ) : (
             <>
-              <button className="sign-in" onClick={() => navigate('/LoginPage')}>Sign In</button>
-              <button className="log-in">Log In</button>
+              <button className="sign-in" onClick={() => navigate('/RegisterPage')}>Sign Up</button>
+              <button className="log-in" onClick={() => navigate('/LoginPage')}>Log In</button>
             </>
           )}
         </div>
