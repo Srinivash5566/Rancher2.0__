@@ -6,6 +6,7 @@ import './stylesheet/LoginPage.css';
 import styles from './stylesheet/component.module.css';
 import { GoArrowLeft } from 'react-icons/go';
 
+
 const RegisterPage = () => {
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
@@ -16,7 +17,7 @@ const RegisterPage = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await api.post('/register', { userName, email, password });
+      const response = await api.post('/auth/register', { userName, email, password });
       const { token, user } = response.data;
 
       login(token, user.userName, user.email);

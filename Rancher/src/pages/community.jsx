@@ -1,42 +1,63 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import component from './stylesheet/component.module.css';
+import api from '../api';
+import { MdDelete } from "react-icons/md";
 
 const Community = () => {
   const navigate = useNavigate();
-  const [messages, setMessages] = useState([
-    { id: 1, username: 'User 001', text: 'Lorem ipsum message 1' },
-    { id: 2, username: 'User 001', text: 'Lorem ipsum message 2' },
-    { id: 3, username: 'Srinivash A K', text: 'Lorem ipsum your message' },
-    { id: 4, username: 'User 002', text: 'Lorem ipsum message 3' }
-  ]);
-
+  const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   // eslint-disable-next-line no-unused-vars
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState(''); // Not used yet
 
-  // Check if user is logged in
+  // Check if user is logged in and load messages
   useEffect(() => {
-    const token = localStorage.getItem('authToken');
-    setIsLoggedIn(!!token); // Set logged in state based on token presence
+    const fetchData = async () => {
+      const token = localStorage.getItem('authToken');
+      setIsLoggedIn(!!token); // Set logged-in state based on token presence
+      try {
+        const res = await api.get('/userMsg/getMsg');
+        setMessages(res.data);
+      } catch (err) {
+        console.error('Error fetching messages:', err);
+      }
+    };
+    fetchData();
   }, []);
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (!isLoggedIn) {
       alert('You need to be logged in to send messages');
       return;
     }
     if (newMessage.trim()) {
-      const newMsg = { id: messages.length + 1, username: localStorage.getItem("userName"), text: newMessage };
-      setMessages([...messages, newMsg]);
-      setNewMessage('');
+      const newMsg = { msgId: messages.length + 1, userName: localStorage.getItem('userName'), Msg: newMessage };
+      try {
+        await api.post('/userMsg/Msg', newMsg);
+        const res = await api.get('/userMsg/getMsg');
+        setMessages(res.data);
+        setNewMessage('');
+      } catch (err) {
+        console.error('Error sending message:', err);
+        alert('Failed to send message');
+      }
     }
   };
 
-  // Logout handler
-  const handleLogout = () => {
+  const delMsg = async (id) => {
+    try {
+      const res = await api.delete('/userMsg/msgDel', { data: { id } });
+      alert(res.data.message);
+      setMessages(messages.filter((msg) => msg.msgId !== id));
+    } catch (err) {
+      console.error('Error deleting message:', err);
+      alert('Failed to delete message');
+    }
+  };
+
+  const handleLogout = async () => {
     localStorage.removeItem('authToken');
     setIsLoggedIn(false);
   };
@@ -72,9 +93,14 @@ const Community = () => {
 
       <div className={component.chat_container}>
         {messages.map((msg) => (
-          <div key={msg.id} className={`${msg.username === localStorage.getItem("userName") ? component.user_message : component.chat_message}`}>
-            <div className={component.message_header}>~ {msg.username}</div>
-            <div className={component.message_body}>{msg.text}</div>
+          <div key={msg.msgId} className={`${msg.userName === localStorage.getItem("userName") ? component.user_message : component.chat_message}`}>
+            <div className={component.message_header}>
+              ~ {msg.userName}
+              {msg.userName === localStorage.getItem("userName") && (
+                <MdDelete onClick={() => delMsg(msg.msgId)} style={{ cursor: 'pointer', marginLeft: '10px' }} />
+              )}
+            </div>
+            <div className={component.message_body}>{msg.Msg}</div>
           </div>
         ))}
       </div>
