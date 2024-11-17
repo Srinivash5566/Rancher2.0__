@@ -1,0 +1,20 @@
+{
+  "name": "rancher_",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "Rancher",
+    "Rancher_Node"
+  ],
+  "scripts": {
+    "start": "concurrently \"npm run start --workspace Rancher\" \"npm run start --workspace Rancher_Node\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
