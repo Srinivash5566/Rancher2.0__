@@ -197,6 +197,8 @@ body {
 
 .chat_container {
   padding: 20px;
+  padding-bottom: 80px;
+  /* Bottom padding for space above fixed input container */
   background-color: #1d2a35;
   min-height: 450px;
   overflow-y: auto;
@@ -236,15 +238,20 @@ body {
   justify-content: space-between;
   padding: 10px;
   background-color: #0c1b27;
-  position: sticky;
+  position: fixed;
+  /* Fix to the bottom of the viewport */
   bottom: 0;
+  width: 100%;
+  /* Full width across screen */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  /* Optional: shadow to add visual separation */
 }
 
 .message_input_container input {
   width: 80%;
   padding: 12px;
   border-radius: 8px;
-  margin-bottom: 0;
+  margin-bottom: 0px;
   border: 1px solid #ccc;
 }
 
@@ -252,6 +259,7 @@ body {
   padding: 5px 24px;
   height: 45px;
   border-radius: 8px;
+  margin-right: 20px;
   background-color: #43da9a;
   color: white;
   border: none;
@@ -263,13 +271,14 @@ body {
   background-color: #36b88e;
 }
 
+
 /* ------------------------------------------------------------------------------------------------ */
 
 /* cardInfo css */
 
 /* ------------------------------------------------------------------------------------------------ */
 
-/* Overall Layout */
+
 .pageContainer {
   min-height: 100vh;
   background-color: #1a1a1a;

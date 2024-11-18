@@ -33,7 +33,7 @@ const Community = () => {
       return;
     }
     if (newMessage.trim()) {
-      const newMsg = { msgId: messages.length + 1, userName: localStorage.getItem('userName'), Msg: newMessage };
+      const newMsg = { msgId: messages.length > 0 ? Number(messages[messages.length - 1].msgId) + 1 : 1, userName: localStorage.getItem('userName'), Msg: newMessage };
       try {
         await api.post('/userMsg/Msg', newMsg);
         const res = await api.get('/userMsg/getMsg');
