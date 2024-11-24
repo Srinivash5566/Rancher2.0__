@@ -10,13 +10,13 @@ const Community = () => {
   const [newMessage, setNewMessage] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   // eslint-disable-next-line no-unused-vars
-  const [search, setSearch] = useState(''); // Not used yet
+  const [search, setSearch] = useState('');
 
   // Check if user is logged in and load messages
   useEffect(() => {
     const fetchData = async () => {
       const token = localStorage.getItem('authToken');
-      setIsLoggedIn(!!token); // Set logged-in state based on token presence
+      setIsLoggedIn(!!token);
       try {
         const res = await api.get('/userMsg/getMsg');
         setMessages(res.data);

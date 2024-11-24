@@ -22,7 +22,10 @@ const Home = () => {
       setFilteredCrops(results);  // Update the filtered crops
     }
   }, [search]);
-
+  const defaultImage = "https://placehold.co/600x400";
+  function getImageUrl (img){
+    return img? img:defaultImage;
+  }
   return (
     <div className="app">
       <div className="headDiv">
@@ -60,7 +63,8 @@ const Home = () => {
             className={component.home_card}
             onClick={() => navigate(`/${crop.cropName}`)}  // Assuming you want to navigate to a unique crop page
           >
-            <img src="https://placehold.co/600x400" alt="placeholder" />
+
+            <img src={getImageUrl(crop.cropImg)} alt="placeholder" />
             <div className={component.home_card_content}>
               <h3>{crop.cropName}</h3>
               <h6>{crop.timePeriod.sowingTime}</h6>

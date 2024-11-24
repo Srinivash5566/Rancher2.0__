@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { GoArrowLeft } from 'react-icons/go';
-import cropData from './cropData';
+import cropData from './cropData';  // Assuming the data you provided is saved in a file named cropData.js
 import styles from './stylesheet/component.module.css';
 
 const CardInfo = () => {
@@ -23,6 +23,14 @@ const CardInfo = () => {
     );
   }
 
+  // Fallback image URL for missing images
+  const defaultImage = "https://picsum.photos/seed/picsum/200/300";
+
+  // Helper function to get image URL or fallback
+  const getImageUrl = (imagePath) => {
+    return imagePath ? imagePath : defaultImage;
+  };
+
   return (
     <div className={`${styles.pageContainer}`}>
       {/* Header */}
@@ -33,15 +41,6 @@ const CardInfo = () => {
         />
         <h1 className={styles.headerTitle}>Rancher</h1>
       </nav>
-
-      {/* Tabs */}
-      <div className={`${styles.tabsContainer}`}>
-        <div className={`${styles.flex} ${styles.justifyCenter} ${styles.spaceX8}`}>
-          <span className={`${styles.textGreen400}`}>CropManagement</span>
-          <span className={`${styles.textWhite}`}>fertilizer</span>
-          <span className={`${styles.textWhite}`}>diseases</span>
-        </div>
-      </div>
 
       {/* Main Content */}
       <main className={`${styles.mainContent}`}>
@@ -54,9 +53,15 @@ const CardInfo = () => {
           <div className={`${styles.grid} ${styles.gridCols1} ${styles.mdGridCols2} ${styles.gap4}`}>
             {crop.bestVarieties.map((variety, index) => (
               <div key={index} className={`${styles.varietyCard}`}>
+                <img
+                  src={getImageUrl(crop.imageReferences.varietyImages[variety.name])}  // Use fallback function
+                  alt={`${variety.name}_image`}
+                  className={`${styles.varietyImage}`}
+                />
                 <h3 className={`${styles.varietyName}`}>{variety.name}</h3>
                 <p className={`${styles.varietyDetails}`}>Duration: {variety.duration}</p>
                 <p className={`${styles.varietyDetails}`}>{variety.features}</p>
+                <p className={`${styles.varietyDetails}`}>Recommended Regions: {variety.recommendedRegions.join(', ')}</p>
               </div>
             ))}
           </div>
@@ -165,10 +170,16 @@ const CardInfo = () => {
         <section className={`${styles.section}`}>
           <h2 className={`${styles.sectionTitle}`}>Common Diseases:</h2>
           <div className={`${styles.grid} ${styles.gridCols1} ${styles.mdGridCols2} ${styles.gap4}`}>
-            {crop.diseases.map((disease, index) => (
+            {crop.diseases.list.map((disease, index) => (
               <div key={index} className={`${styles.diseaseCard}`}>
-                <h3 className={`${styles.diseaseName}`}>{disease.name}</h3>
-                <p className={`${styles.diseaseInfo}`}>{disease.description}</p>
+                <h3 className={`${styles.textWhite}`}>{disease.name}</h3>
+                <p className={`${styles.textGray300}`}>{disease.symptoms}</p>
+                <p className={`${styles.textGreen400}`}>Solution: {disease.solution}</p>
+                <img
+                  src={getImageUrl(crop.diseases.diseaseImages[disease.name])} // Use fallback function
+                  alt={`${disease.name}_image`}
+                  className={`${styles.diseaseImage}`}
+                />
               </div>
             ))}
           </div>

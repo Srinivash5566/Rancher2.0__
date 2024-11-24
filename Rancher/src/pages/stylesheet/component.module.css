@@ -156,6 +156,28 @@ body {
 /* Harvesting Engines Styles */
 
 /* ------------------------------------------------------------------------------------------------ */
+.Add_Engine {
+  background-color: #43da9a;
+  color: #fff;
+  padding: 8px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.Add_Engine:hover {
+  background-color: #36b88e;
+}
+
+.Add_Engine_field {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: #0c1b27;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
 
 .engine_list {
   display: grid;
@@ -351,6 +373,7 @@ body {
 
 .varietyCard {
   background-color: #374151;
+  margin: 10px;
   padding: 16px;
   border-radius: 8px;
 }
@@ -380,6 +403,7 @@ body {
 /* Planting Method Section */
 .methodCard {
   background-color: #374151;
+  margin: 10px;
   padding: 16px;
   border-radius: 8px;
 }
@@ -408,6 +432,7 @@ body {
 /* Disease Section */
 .diseaseCard {
   background-color: #374151;
+  margin: 10px;
   padding: 16px;
   border-radius: 8px;
 }
@@ -423,7 +448,6 @@ body {
 }
 
 /* ------------------------------------------------------------------------------------------------ */
-
 /* Responsive Design */
 /* ------------------------------------------------------------------------------------------------ */
 
