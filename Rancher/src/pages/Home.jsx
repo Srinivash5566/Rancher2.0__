@@ -1,30 +1,30 @@
 // src/pages/Home.jsx
-import { Link, useNavigate } from 'react-router-dom';
-import component from './stylesheet/component.module.css';
-import cropData from './cropData';
-import { useState, useEffect } from 'react';
-import { useAuth } from '../AuthContext'; // Import the useAuth hook
+import { Link, useNavigate } from "react-router-dom";
+import component from "./stylesheet/component.module.css";
+import cropData from "./cropData";
+import { useState, useEffect } from "react";
+import { useAuth } from "../AuthContext"; // Import the useAuth hook
 
 const Home = () => {
   const navigate = useNavigate();
   const { isLoggedIn, logout } = useAuth(); // Access isLoggedIn and logout from context
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
   const [filteredCrops, setFilteredCrops] = useState(cropData);
 
   // Use useEffect to filter crops whenever search term changes
   useEffect(() => {
-    if (search === '') {
+    if (search === "") {
       setFilteredCrops(cropData); // If search is empty, show all crops
     } else {
-      const results = cropData.filter(crop =>
+      const results = cropData.filter((crop) =>
         crop.cropName.toLowerCase().includes(search.toLowerCase())
       );
-      setFilteredCrops(results);  // Update the filtered crops
+      setFilteredCrops(results); // Update the filtered crops
     }
   }, [search]);
   const defaultImage = "https://placehold.co/600x400";
-  function getImageUrl (img){
-    return img? img:defaultImage;
+  function getImageUrl(img) {
+    return img ? img : defaultImage;
   }
   return (
     <div className="app">
@@ -39,21 +39,41 @@ const Home = () => {
           />
           <div className="auth-buttons">
             {isLoggedIn ? (
-              <button className="log-out" onClick={logout}>Log Out</button>
+              <button className="log-out" onClick={logout}>
+                Log Out
+              </button>
             ) : (
               <>
-                <button className="sign-in" onClick={() => navigate('/RegisterPage')}>Sign Up</button>
-                <button className="log-in" onClick={() => navigate('/LoginPage')}>Log In</button>
+                <button
+                  className="sign-in"
+                  onClick={() => navigate("/RegisterPage")}
+                >
+                  Sign Up
+                </button>
+                <button
+                  className="log-in"
+                  onClick={() => navigate("/LoginPage")}
+                >
+                  Log In
+                </button>
               </>
             )}
           </div>
         </header>
 
         <nav className={component.nav_bar}>
-          <Link to="/" className={component.nav_link}>Home</Link>
-          <Link to="/HarvestingEngines" className={component.nav_link}>Harvesting Engines</Link>
-          <Link to="/Community" className={component.nav_link}>Community</Link>
-          <Link to="#" className={component.nav_link}>About</Link>
+          <Link to="/" className={component.nav_link_in}>
+            Home
+          </Link>
+          <Link to="/HarvestingEngines" className={component.nav_link}>
+            Harvesting Engines
+          </Link>
+          <Link to="/Community" className={component.nav_link}>
+            Community
+          </Link>
+          <Link to="#" className={component.nav_link}>
+            About
+          </Link>
         </nav>
       </div>
       <main className={component.home_grid}>
@@ -61,9 +81,8 @@ const Home = () => {
           <div
             key={index}
             className={component.home_card}
-            onClick={() => navigate(`/${crop.cropName}`)}  // Assuming you want to navigate to a unique crop page
+            onClick={() => navigate(`/${crop.cropName}`)} // Assuming you want to navigate to a unique crop page
           >
-
             <img src={getImageUrl(crop.cropImg)} alt="placeholder" />
             <div className={component.home_card_content}>
               <h3>{crop.cropName}</h3>

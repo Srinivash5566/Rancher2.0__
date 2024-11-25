@@ -1,6 +1,6 @@
 /* General Layout and Styling */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   background-color: #f4f4f9;
   margin: 0;
   padding: 0;
@@ -25,7 +25,7 @@ body {
   width: 300px;
   padding: 10px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #ffffff;
   font-size: 14px;
 }
 
@@ -51,12 +51,19 @@ body {
 .nav_bar {
   display: flex;
   justify-content: center;
-  background-color: #1f2d3a;
-  padding: 12px 0;
+  background-color: #282a35;
+  padding: 2px;
 }
 
 .nav_link {
   color: #43da9a;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 12px 20px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+.nav_link_in {
+  color: #ffffff;
   text-decoration: none;
   font-weight: 500;
   padding: 12px 20px;
@@ -96,7 +103,7 @@ body {
 
 .home_card img {
   width: 100%;
-  height: auto;
+  height: 60%;
   object-fit: cover;
   border-bottom: 1px solid #ddd;
 }
@@ -183,7 +190,6 @@ body {
   display: grid;
   gap: 20px;
   padding: 20px;
-  justify-items: center;
 }
 
 .engine_item {
@@ -191,7 +197,7 @@ body {
   border: 1px solid #ddd;
   display: flex;
   border-radius: 8px;
-  width: 100%;
+  width: 800px;
   /* Full width for larger look */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
@@ -209,6 +215,81 @@ body {
 
 .engine_info {
   padding: 5px;
+  width: 100%;
+}
+.engine_info h3 {
+  margin: 0px;
+}
+.engine_info hr {
+  margin: 0px;
+  border: 0.1px solid rgb(83, 83, 83);
+  width: 60%;
+}
+.placeholdDiv {
+  height: 25px;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.Engine_del {
+  padding: 2px;
+  position: relative;
+  left: 10px;
+  color: #1f2937;
+}
+.Engine_del:hover {
+  color: #36b88e;
+  cursor: pointer;
+}
+/* ----------------------- Engine add ----------------------- */
+
+.component.Engine_form {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure form is on top */
+  transition: all 0.3s ease-in-out;
+}
+
+.component.Engine_form form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.component.Engine_form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.component.Engine_form input {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.component.Engine_form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.component.Engine_form button:hover {
+  background-color: #0056b3;
 }
 
 /* ------------------------------------------------------------------------------------------------ */
@@ -230,7 +311,7 @@ body {
   margin-bottom: 20px;
   background-color: #fff;
   padding: 12px;
-  margin-right: 10%;
+  width: 800px;
   border-radius: 20px;
   color: #333;
 }
@@ -238,7 +319,7 @@ body {
 .user_message {
   margin-bottom: 20px;
   padding: 12px;
-  margin-left: 10%;
+  width: 800px;
   border-radius: 20px;
   color: #333;
   background-color: #d5f5d3;
@@ -293,13 +374,11 @@ body {
   background-color: #36b88e;
 }
 
-
 /* ------------------------------------------------------------------------------------------------ */
 
 /* cardInfo css */
 
 /* ------------------------------------------------------------------------------------------------ */
-
 
 .pageContainer {
   min-height: 100vh;
@@ -383,7 +462,11 @@ body {
   font-weight: bold;
   margin-bottom: 8px;
 }
-
+.varietyImage {
+  height: 400px;
+  width: 400px;
+  object-fit: fill;
+}
 .varietyDetails {
   color: #a1a1aa;
 }

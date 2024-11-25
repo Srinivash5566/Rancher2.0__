@@ -1,13 +1,13 @@
 // src/App.jsx
-import { AuthProvider } from './AuthContext';
-import Home from './pages/Home';
-import LoginPage from './pages/LoginPage';
-import Community from './pages/community';
-import HarvestingEngines from './pages/HarvestingEngines';
-import No404 from './pages/No404';
-import RegisterPage from './pages/RegisterPage';
-import CardInfo from './pages/CardInfo';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from "./AuthContext";
+import Home from "./pages/Home";
+import LoginPage from "./pages/LoginPage";
+import Community from "./pages/community";
+import HarvestingEngines from "./pages/HarvestingEngines";
+import No404 from "./pages/No404";
+import RegisterPage from "./pages/RegisterPage";
+import CardInfo from "./pages/CardInfo";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
@@ -24,7 +24,6 @@ const App = () => {
         </Routes>
       </Router>
     </AuthProvider>
-
   );
 };
 
