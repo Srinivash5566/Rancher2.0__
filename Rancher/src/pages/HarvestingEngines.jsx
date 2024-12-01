@@ -14,19 +14,25 @@ const HarvestingEngines = () => {
   const [engineName, setEngineName] = useState("");
   const [ownerMobile, setOwnerMobile] = useState("");
   const [place, setPlace] = useState("");
+  const [loading, setLoading] = useState(null);
   const [priceDetails, setPriceDetails] = useState("");
   const [description, setDescription] = useState("");
-  const [engines, setEngines] = useState([]); // Initialize as an empty array
-  const [showAddEngineForm, setShowAddEngineForm] = useState(false); // Add state to toggle form visibility
-  const [selectedEngine, setSelectedEngine] = useState(null); // Track the selected engine
+  const [engines, setEngines] = useState([]);
+  const [showAddEngineForm, setShowAddEngineForm] = useState(false);
+  const [selectedEngine, setSelectedEngine] = useState(null);
   const { isLoggedIn, logout } = useAuth();
+  const [file, setFile] = useState();
+
   useEffect(() => {
     async function getData() {
+      setLoading("Loading please be patient...");
       try {
         const res = await api.get("/Engine/EngineGet");
         setEngines(res.data);
+        setLoading(null);
       } catch (error) {
         console.error("Failed to fetch engines:", error);
+        setLoading(null);
         alert("Failed to fetch engines. Please try again later.");
       }
     }
@@ -41,28 +47,27 @@ const HarvestingEngines = () => {
       alert("You need to be logged in to add an engine.");
       return;
     }
-
-    const newEngine = {
-      engineId:
-        engines.length > 0 ? engines[engines.length - 1].engineId + 1 : 1,
-      ownerName,
-      engineName,
-      ownerMobile,
-      place,
-      priceDetails,
-      description,
-    };
+    const formData = new FormData();
+    formData.append("image", file);
+    formData.append(
+      "engineId",
+      engines.length > 0 ? engines[engines.length - 1].engineId + 1 : 1
+    );
+    formData.append("engineName", engineName);
+    formData.append("ownerName", ownerName);
+    formData.append("ownerMobile", ownerMobile);
+    formData.append("place", place);
+    formData.append("priceDetails", priceDetails);
+    formData.append("description", description);
 
     try {
-      const res = await api.post("/Engine/EngineSave", newEngine);
+      const res = await api.post("/Engine/EngineSave", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data", // Specify multipart/form-data
+        },
+      });
       setEngines((prev) => [...prev, res.data]);
       setShowAddEngineForm(false);
-      // Clear form fields
-      setEngineName("");
-      setOwnerMobile("");
-      setPlace("");
-      setPriceDetails("");
-      setDescription("");
     } catch (err) {
       console.error("Failed to add engine:", err);
       alert("Failed to add engine. Please try again later.");
@@ -143,6 +148,14 @@ const HarvestingEngines = () => {
               onChange={(e) => setDescription(e.target.value)}
             />
           </label>
+          <label>
+            Select the Vehicle image:
+            <input
+              type="file"
+              onChange={(e) => setFile(e.target.files[0])}
+              accept="image/*"
+            />
+          </label>
           <button type="submit">Add Engine</button>
         </form>
       </div>
@@ -163,7 +176,10 @@ const HarvestingEngines = () => {
             className={component.Add_Engine_close}
             onClick={() => setSelectedEngine(null)}
           />
-          <img src="https://placehold.co/600x400" alt="Image" />
+          <img
+            src={`data:${engine.image.contentType};base64,${engine.image.imgData}`}
+            alt="Image"
+          />
           <table>
             <tbody>
               <tr>
@@ -236,6 +252,13 @@ const HarvestingEngines = () => {
         </Link>
       </nav>
 
+      {loading && (
+        <div className={component.model}>
+          <div className={component.overlayDiv}>
+            <h1 className={component.loading}>{loading}</h1>
+          </div>
+        </div>
+      )}
       <div className={component.engine_list}>
         {engines
           .filter(
@@ -256,8 +279,9 @@ const HarvestingEngines = () => {
                 setSelectedEngine(engine);
               }}
             >
+              {console.log(engine.image.imgData)}
               <img
-                src="https://placehold.co/600x400"
+                src={`data:${engine.image.contentType};base64,${engine.image.imgData}`}
                 alt={engine.engineName || "Engine Image"}
               />
               <div className={component.engine_info}>

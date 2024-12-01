@@ -20,6 +20,20 @@ body {
   font-weight: 600;
   color: #43da9a;
 }
+.loading {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  color: white !important;
+  transform: translate(-50%, -50%);
+  line-height: 1.5;
+  padding: 14px;
+  border-radius: 3px;
+  max-width: 700px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
 
 .search_bar {
   width: 300px;
