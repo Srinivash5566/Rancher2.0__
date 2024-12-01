@@ -3,20 +3,19 @@ import { Link, useNavigate } from "react-router-dom";
 import component from "./stylesheet/component.module.css";
 import api from "../api";
 import { MdDelete } from "react-icons/md";
+import { useAuth } from "../AuthContext";
 
 const Community = () => {
   const navigate = useNavigate();
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { isLoggedIn, logout } = useAuth(); // Access isLoggedIn and logout from context
   // eslint-disable-next-line no-unused-vars
   const [search, setSearch] = useState("");
 
   // Check if user is logged in and load messages
   useEffect(() => {
     const fetchData = async () => {
-      const token = localStorage.getItem("authToken");
-      setIsLoggedIn(!!token);
       try {
         const res = await api.get("/userMsg/getMsg");
         setMessages(res.data);
@@ -64,11 +63,6 @@ const Community = () => {
     }
   };
 
-  const handleLogout = async () => {
-    localStorage.removeItem("authToken");
-    setIsLoggedIn(false);
-  };
-
   return (
     <div className={component.community}>
       <header className="header">
@@ -81,7 +75,7 @@ const Community = () => {
         />
         <div className="auth-buttons">
           {isLoggedIn ? (
-            <button className="log-out" onClick={handleLogout}>
+            <button className="log-out" onClick={logout}>
               Log Out
             </button>
           ) : (

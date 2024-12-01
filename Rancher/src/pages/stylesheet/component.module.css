@@ -209,7 +209,9 @@ body {
 }
 
 .engine_item img {
-  width: 200px;
+  width: 195px;
+  padding: 5px;
+  border-radius: 15px;
   object-fit: cover;
 }
 
@@ -291,6 +293,123 @@ body {
 .component.Engine_form button:hover {
   background-color: #0056b3;
 }
+/* ------------------------------------pop up ----------------------------------------------------- */
+.model,
+.overlayDiv {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+.overlayDiv {
+  background-color: rgb(90, 90, 90, 0.9);
+}
+.DetailContent {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  color: white !important;
+  transform: translate(-50%, -50%);
+  line-height: 1.5;
+  background-color: #0e1a23;
+  padding: 14px;
+  border-radius: 3px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0);
+  max-width: 600px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.DetailContent table {
+  width: 40%;
+  border-collapse: collapse;
+}
+.DetailContent img {
+  border-radius: 10px;
+  width: 500px;
+  height: 400px;
+}
+.DetailContent table {
+  text-align: left;
+}
+
+/* --------------- for add engine --------------- */
+.EnginePopupForm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 2px;
+  background-color: #0e1a23;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  padding-right: 40px;
+  max-width: 400px;
+  width: 90%;
+  font-family: Arial, sans-serif;
+}
+
+.EnginePopupForm label {
+  display: block;
+  color: #f9f9f9;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.EnginePopupForm input {
+  width: 100%;
+  padding: 10px;
+  background-color: #f9f9f9;
+  margin: 6px 0 15px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.EnginePopupForm input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.EnginePopupForm button {
+  display: inline-block;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.EnginePopupForm button:hover {
+  background-color: #218838;
+}
+
+.Add_Engine_close {
+  font-size: 28px;
+  padding: 5px;
+  margin-bottom: 15px;
+  color: #7a7a7c;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+.Add_Engine_close:hover {
+  color: #ffffff;
+  background-color: #e81123;
+}
 
 /* ------------------------------------------------------------------------------------------------ */
 
@@ -322,7 +441,7 @@ body {
   width: 800px;
   border-radius: 20px;
   color: #333;
-  background-color: #d5f5d3;
+  background-color: #d0ffcd;
 }
 
 .message_header {
