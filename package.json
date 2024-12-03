@@ -18,6 +18,7 @@
     "concurrently": "^9.1.0"
   },
   "dependencies": {
-    "multer": "^1.4.5-lts.1"
+    "multer": "^1.4.5-lts.1",
+    "rancher_": "file:"
   }
 }
