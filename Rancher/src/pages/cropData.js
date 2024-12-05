@@ -1062,201 +1062,1655 @@ const cropData = [
       ],
     },
   },
+
+  // ================================================================================================
+  // ================================================================================================
+  // ================================================================================================
+  {
+    cropName: "Groundnut",
+    cropImg:
+      "https://cdn.wikifarmer.com/wp-content/uploads/2023/07/Groundnut-Plant-Information-History-Uses-and-Nutrition-Value-1024x599.jpg",
+    imageReferences: {
+      cropImages: [
+        "groundnut_field.jpg",
+        "groundnut_plant.jpg",
+        "groundnut_harvest.jpg",
+      ],
+      varietyImages: {
+        "JL 24": "https://example.com/jl24_variety.jpg",
+        "TAG 24": "https://example.com/tag24_variety.jpg",
+        "Girnar 4": "https://example.com/girnar4_variety.jpg",
+        "ICGV 91114": "https://example.com/icgv91114_variety.jpg",
+        "TG 37A": "https://example.com/tg37a_variety.jpg",
+      },
+    },
+    bestVarieties: [
+      {
+        name: "JL 24",
+        features: "High yield and disease resistant",
+        recommendedRegions: ["Gujarat", "Rajasthan"],
+      },
+      {
+        name: "TAG 24",
+        features: "Bold seeded variety with good oil content",
+        recommendedRegions: ["Maharashtra", "Karnataka"],
+      },
+      {
+        name: "Girnar 4",
+        features: "Drought tolerant with high pod yield",
+        recommendedRegions: ["Saurashtra", "Rajasthan"],
+      },
+      {
+        name: "ICGV 91114",
+        features: "Early maturing with high pod yield",
+        recommendedRegions: ["Andhra Pradesh", "Tamil Nadu"],
+      },
+      {
+        name: "TG 37A",
+        features: "Rust resistant with good pod quality",
+        recommendedRegions: ["Gujarat", "Madhya Pradesh"],
+      },
+    ],
+    timePeriod: {
+      sowingTime: "June to July (Kharif)",
+      harvestingTime: "September to October",
+      totalDuration: "90-120 days",
+    },
+    cropManagement: {
+      soilPreparation: {
+        step1: "Primary tillage - deep plowing",
+        step2: "Secondary tillage - fine seedbed preparation",
+        step3: "Soil type requirements: Sandy loam or light loamy soils",
+        step4: "pH requirements: 6.0-7.0",
+        soilTreatment: "Add well-decomposed organic manure",
+        bedPreparation: "Prepare flat or raised beds with good drainage",
+      },
+      plantingMethod: {
+        directSeeding: {
+          process: "Seed sowing in rows using seed drill",
+          advantages: [
+            "Uniform planting",
+            "Precise seed placement",
+            "Reduced seed rate",
+          ],
+          disadvantages: [
+            "Requires precise equipment",
+            "Sensitive to soil moisture",
+          ],
+        },
+        transplanting: {
+          process: "Not commonly used in groundnut cultivation",
+          advantages: [],
+          disadvantages: [],
+        },
+      },
+      seedTreatment: {
+        fungicideTreatment:
+          "Thiram or Carbendazim to prevent seed-borne diseases",
+        preSoaking: "Soak seeds in water for 6-8 hours before sowing",
+        otherTreatments: "Treat with Rhizobium culture for nitrogen fixation",
+      },
+      spacing: {
+        rowToRow: "45-60 cm",
+        plantToPlant: "10-15 cm",
+        plantingDepth: "5-7 cm",
+      },
+      seedingDetails: {
+        seedRate: "80-100 kg/ha",
+        seedQuality: "Certified seeds with 95% germination",
+        germinationPercent: "85-90%",
+      },
+      initialCare: {
+        irrigation: {
+          firstIrrigation: "Immediately after sowing",
+          frequency: "Every 7-10 days",
+          waterRequirement: "350-400 mm",
+        },
+        mulching: {
+          type: "Organic mulch like crop residues",
+          timing: "After seedling emergence",
+          benefits: [
+            "Moisture conservation",
+            "Weed suppression",
+            "Temperature regulation",
+          ],
+        },
+        thinning: {
+          timing: "2 weeks after germination",
+          process: "Remove weak and overcrowded seedlings",
+          finalSpacing: "20-25 cm",
+        },
+        weeding: {
+          firstWeeding: "20-25 days after sowing",
+          frequency: "2-3 times during crop cycle",
+          method: "Manual or mechanical inter-cultivation",
+        },
+      },
+      interculturalOperations: {
+        earthingUp: "Mound soil around plant base during pod development",
+        staking: "Not required",
+        pruning: "Remove diseased or dead branches",
+        otherOperations: ["Crop rotation", "Regular monitoring"],
+      },
+    },
+    fertilizerManagement: {
+      fertilizerImages: {
+        npkFertilizer: "npk_fertilizer.jpg",
+        micronutrients: "micronutrients_fertilizer.jpg",
+        organicManure: "organic_manure.jpg",
+      },
+      basalDose: "20 kg NPK (10:20:10) per hectare",
+      topDressing: [
+        {
+          timing: "30 days after sowing",
+          fertilizer: "25 kg urea/ha",
+        },
+        {
+          timing: "45 days after sowing",
+          fertilizer: "20 kg DAP/ha",
+        },
+      ],
+      micronutrients: "Zinc and boron as soil test recommendations",
+      organicFertilizers: "8-10 tons of compost per hectare",
+    },
+    diseases: {
+      diseaseImages: {
+        "Leaf Spot": "https://example.com/leaf_spot.jpg",
+        Rust: "https://example.com/rust_disease.jpg",
+        "Cercospora Leaf Spot": "https://example.com/cercospora.jpg",
+        "Tikka Disease": "https://example.com/tikka_disease.jpg",
+      },
+      list: [
+        {
+          name: "Leaf Spot",
+          symptoms: "Brown circular spots on leaves with yellow margins",
+          solution: "Spray Mancozeb or Copper-based fungicides",
+        },
+        {
+          name: "Rust",
+          symptoms: "Orange-brown pustules on leaf surface",
+          solution: "Apply systemic fungicides like Propiconazole",
+        },
+        {
+          name: "Cercospora Leaf Spot",
+          symptoms: "Circular brown spots with gray center",
+          solution: "Use Carbendazim or Hexaconazole",
+        },
+        {
+          name: "Tikka Disease",
+          symptoms: "Small dark spots with yellow halos",
+          solution: "Crop rotation and fungicide treatment",
+        },
+      ],
+    },
+  },
   // ================================================================================================
   // ================================================================================================
   // ================================================================================================
 
   {
-    cropName: "groundnut",
-    cropImg:
-      "https://cdn.wikifarmer.com/wp-content/uploads/2023/07/Groundnut-Plant-Information-History-Uses-and-Nutrition-Value-1024x599.jpg",
+    cropName: "Banana",
+    cropImg: "https://www.greensofkerala.com/wp-content/uploads/2024/01/grand-nain-banana-plant.png",
     imageReferences: {
-      cropImages: ["rice_field.jpg", "rice_plant.jpg", "rice_grain.jpg"],
+      cropImages: [
+        "banana_plantation.jpg",
+        "banana_tree.jpg",
+        "banana_fruit.jpg",
+      ],
       varietyImages: {
-        IR36: "ir36.jpg",
-        IR64: "ir64.jpg",
-        "MTU 7029 (Swarna)": "mtu_7029_swarna.jpg",
-        "BPT 5204 (Samba Mahsuri)": "bpt_5204_samba_mahsuri.jpg",
+        Robusta: "https://m.media-amazon.com/images/I/81WIcL-ZWBL._AC_UF1000,1000_QL80_.jpg",
+        "Dwarf Cavendish": "https://www.trees.com/wp-content/uploads/products/medium/1000/Dwarf-Cavendish-Banana-2.webp",
+        "Grand Naine": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxfsAki0hWrc3TCH4SU38jeSePXaDy8dEcsQ&s",
+        "Red Banana": "https://m.media-amazon.com/images/I/61g4r0vLYdL._AC_UF1000,1000_QL80_.jpg",
+        Rasthali: "https://m.media-amazon.com/images/I/51atk4uWg-L._AC_UF1000,1000_QL80_.jpg",
       },
     },
     bestVarieties: [
       {
-        name: "IR36",
-        duration: "110-115 days",
-        features: "High yielding, disease resistant",
-        recommendedRegions: ["Punjab", "Haryana"],
-      },
-      {
-        name: "IR64",
-        duration: "115-120 days",
-        features: "Good grain quality, suitable for lowlands",
-        recommendedRegions: ["West Bengal", "Uttar Pradesh"],
-      },
-      {
-        name: "MTU 7029 (Swarna)",
-        duration: "140-145 days",
-        features: "High yielding, preferred by farmers",
-        recommendedRegions: ["Andhra Pradesh", "Telangana"],
-      },
-      {
-        name: "BPT 5204 (Samba Mahsuri)",
-        duration: "145-150 days",
-        features: "Premium quality, high market value",
+        name: "Robusta",
+        features: "High yield and disease resistance",
         recommendedRegions: ["Tamil Nadu", "Karnataka"],
+      },
+      {
+        name: "Dwarf Cavendish",
+        features: "Compact growth, suitable for small spaces",
+        recommendedRegions: ["Andhra Pradesh", "Maharashtra"],
+      },
+      {
+        name: "Grand Naine",
+        features: "Excellent quality and export potential",
+        recommendedRegions: ["Kerala", "Gujarat"],
+      },
+      {
+        name: "Red Banana",
+        features: "Rich flavor and high nutritional value",
+        recommendedRegions: ["West Bengal", "Assam"],
+      },
+      {
+        name: "Rasthali",
+        features: "Popular for its taste and market demand",
+        recommendedRegions: ["Bihar", "Uttar Pradesh"],
       },
     ],
     timePeriod: {
-      sowingTime: "Kharif: June-July, Rabi: November-December",
-      harvestingTime: "Kharif: October-November, Rabi: March-April",
-      totalDuration: "115-150 days depending on variety",
+      sowingTime: "June to September",
+      harvestingTime: "12-15 months after planting",
+      totalDuration: "12-15 months",
     },
     cropManagement: {
       soilPreparation: {
-        step1: "Primary tillage - Plough field to 20-25 cm depth",
-        step2: "Puddling - Till wet field to destroy weeds and level the field",
-        step3: "Soil type: Clay loam to heavy clay soils preferred",
-        step4: "pH requirements: 5.5-6.5",
-        soilTreatment: "Apply organic matter 2-3 weeks before transplanting",
+        step1: "Primary tillage - deep plowing and removing weeds",
+        step2: "Secondary tillage - adding organic matter and leveling",
+        step3: "Soil type requirements: Well-drained loamy soil",
+        step4: "pH requirements: 6.0-7.5",
+        soilTreatment: "Add well-decomposed organic compost or farmyard manure",
         bedPreparation:
-          "Level the field perfectly for uniform water distribution",
+          "Prepare pits (60x60x60 cm) and fill with topsoil and manure mix",
       },
       plantingMethod: {
         directSeeding: {
-          process: "Sow pre-germinated seeds directly in puddled soil",
-          advantages: [
-            "Less labor requirement",
-            "Earlier crop maturity",
-            "Lower water consumption",
-          ],
-          disadvantages: [
-            "Higher weed problem",
-            "Poor crop stand in irregular land",
-            "Bird damage risk",
-          ],
+          process:
+            "Not applicable for bananas; suckers or tissue culture plants are used",
+          advantages: [],
+          disadvantages: [],
         },
         transplanting: {
-          process:
-            "Transfer 20-25 days old seedlings from nursery to main field",
+          process: "Plant tissue culture plants or suckers in prepared pits",
           advantages: [
-            "Better weed control",
-            "Uniform crop stand",
-            "Higher yield potential",
+            "Disease-free planting material",
+            "Uniform growth",
+            "Higher survival rate",
           ],
-          disadvantages: [
-            "More labor intensive",
-            "Higher cost",
-            "Longer crop duration",
-          ],
+          disadvantages: ["Higher cost", "Labor-intensive"],
         },
       },
       seedTreatment: {
-        fungicideTreatment: "Carbendazim @ 2g/kg of seed",
-        preSoaking: "Soak seeds in water for 24 hours, incubate for 24 hours",
+        fungicideTreatment: "Dip suckers in Carbendazim solution",
+        preSoaking: "Not applicable for banana",
         otherTreatments:
-          "Hot water treatment at 52°C for 10 minutes for seed-borne diseases",
+          "Use tissue culture plants for disease-free propagation",
       },
       spacing: {
-        rowToRow: "20 cm",
-        plantToPlant: "15 cm",
-        plantingDepth: "2-3 cm for direct seeding, 3-4 cm for transplanting",
+        rowToRow: "2.5-3 meters",
+        plantToPlant: "2-2.5 meters",
+        plantingDepth: "Plant at the same depth as the nursery",
       },
       seedingDetails: {
-        seedRate: "Direct seeding: 20-25 kg/ha, Transplanting: 12-15 kg/ha",
-        seedQuality: "Certified seeds with 80% germination",
-        germinationPercent: "Minimum 80% required",
+        seedRate: "Not applicable (use suckers or tissue culture plants)",
+        seedQuality: "Certified suckers or disease-free tissue culture plants",
+        germinationPercent: "Not applicable",
       },
       initialCare: {
         irrigation: {
-          firstIrrigation: "Immediately after transplanting",
-          frequency: "Maintain 2-5 cm water level throughout growing period",
-          waterRequirement: "1200-1400 mm total water requirement",
+          firstIrrigation: "Immediately after planting",
+          frequency: "Once every 3-7 days depending on weather",
+          waterRequirement: "1200-1500 mm per annum",
         },
         mulching: {
-          type: "Not typically required in puddle transplanted rice",
-          timing: "NA",
-          benefits: ["NA"],
+          type: "Organic mulch like straw or dry leaves",
+          timing: "Immediately after planting",
+          benefits: [
+            "Conserves moisture",
+            "Controls weeds",
+            "Improves soil organic matter",
+          ],
         },
         thinning: {
-          timing: "10-15 days after sowing in direct seeded rice",
-          process: "Remove excess seedlings maintaining proper spacing",
-          finalSpacing: "15-20 cm between plants",
+          timing: "Remove excess suckers every 3-4 months",
+          process: "Leave only 1-2 healthy suckers per plant",
+          finalSpacing: "Maintain plant density",
         },
         weeding: {
-          firstWeeding: "20-25 days after transplanting",
-          frequency: "2-3 times during crop growth",
-          method: "Manual or chemical using pre-emergence herbicides",
+          firstWeeding: "1 month after planting",
+          frequency: "Every 2-3 months",
+          method: "Manual or mechanical",
         },
       },
       interculturalOperations: {
-        earthingUp: "Not required in transplanted rice",
-        staking: "Not required",
-        pruning: "Not required",
+        earthingUp: "Around the base during early stages for stability",
+        staking: "Provide support to prevent lodging during storms",
+        pruning: "Remove damaged or diseased leaves",
         otherOperations: [
-          "Beushening in direct seeded rice",
-          "Gap filling within 7 days of transplanting",
-          "Maintaining water level",
+          "Fertilizer application",
+          "Pest and disease management",
         ],
       },
     },
     fertilizerManagement: {
       fertilizerImages: {
-        ureaFertilizer: "urea_fertilizer.jpg",
-        fym: "fym.jpg",
-        zincSulfate: "zinc_sulfate.jpg",
+        npkFertilizer: "npk_banana_fertilizer.jpg",
+        ureaFertilizer: "banana_urea_fertilizer.jpg",
+        compost: "banana_compost.jpg",
       },
-      basalDose: {
-        nitrogen: "40 kg/ha",
-        phosphorus: "40 kg/ha",
-        potassium: "40 kg/ha",
-      },
+      basalDose: "100g NPK (10:10:20) per plant at planting",
       topDressing: [
         {
-          timing: "30 days after transplanting",
-          fertilizer: "Urea 40 kg N/ha",
+          timing: "3 months after planting",
+          fertilizer: "100g NPK (20:10:10) per plant",
         },
         {
-          timing: "55-60 days after transplanting",
-          fertilizer: "Urea 40 kg N/ha",
+          timing: "6 months after planting",
+          fertilizer: "150g NPK (20:10:10) per plant",
         },
       ],
-      micronutrients: "Zinc sulfate 25 kg/ha before transplanting",
-      organicFertilizers: "FYM @ 10-12 tons/ha during land preparation",
+      micronutrients: "Zinc, magnesium, and boron as needed",
+      organicFertilizers: "20-25 kg of compost per plant annually",
     },
     diseases: {
       diseaseImages: {
-        blast: "blast.jpg",
-        bacterialLeafBlight: "bacterial_leaf_blight.jpg",
-        sheathBlight: "sheath_blight.jpg",
-        brownSpot: "brown_spot.jpg",
+        "Panama Wilt": "https://www.frontiersin.org/files/Articles/469624/fpls-10-01395-HTML/image_m/fpls-10-01395-g004.jpg",
+        "Sigatoka Leaf Spot": "https://i.ytimg.com/vi/gwaXSFx8nAk/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGEYgZSg8MA8=&rs=AOn4CLDc24C6nxKoIJjcxtBX-SnuKsgweg",
+        "Banana Bunchy Top Virus":"https://infonet-biovision.org/sites/default/files/1113.400x400_5.jpeg",
+        "Banana Weevil": "https://content.peat-cloud.com/w400/pseudostem-weevil-2.jpg",
       },
       list: [
         {
-          name: "Blast",
-          symptoms: "Diamond-shaped lesions on leaves with gray center",
-          solution: "Spray Tricyclazole 75WP @ 0.6g/l water",
+          name: "Panama Wilt",
+          symptoms: "Yellowing leaves and wilting",
+          solution: "Use resistant varieties and improve drainage",
         },
         {
-          name: "Bacterial Leaf Blight",
-          symptoms: "Yellow to white lesions along leaf margins",
-          solution: "Use resistant varieties, copper-based fungicides",
+          name: "Sigatoka Leaf Spot",
+          symptoms: "Dark streaks and necrotic lesions on leaves",
+          solution: "Apply fungicides like Mancozeb",
         },
         {
-          name: "Sheath Blight",
-          symptoms: "Oval lesions on leaf sheaths near water level",
-          solution: "Spray Hexaconazole 5EC @ 2ml/l water",
+          name: "Banana Bunchy Top Virus",
+          symptoms: "Bunched and erect leaves with dark streaks",
+          solution:
+            "Use virus-free planting material and remove infected plants",
         },
         {
-          name: "Brown Spot",
-          symptoms: "Brown circular spots on leaves and grains",
-          solution: "Spray Mancozeb @ 2.5g/l water",
+          name: "Banana Weevil",
+          symptoms: "Tunnels in pseudostem and reduced vigor",
+          solution: "Apply insecticides and remove plant debris",
+        },
+      ],
+    },
+  },
+  // ================================================================================================
+  // ================================================================================================
+  // ================================================================================================
+  {
+    cropName: "Tomato",
+    cropImg: "https://upload.wikimedia.org/wikipedia/commons/8/89/Tomato_je.jpg",
+    imageReferences: {
+      cropImages: ["tomato_field.jpg", "tomato_plant.jpg", "tomato_fruits.jpg"],
+      varietyImages: {
+        Roma: "https://upload.wikimedia.org/wikipedia/commons/5/52/TomateTrossRomanaTyp.jpg",
+        Cherry:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiArHVSJmLSBaGB6k1AqOjfnpN1hfRfH-R3Q&s",
+        Beefsteak:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRompp57Sx4c1XVHW-X1n64puXvPbraCXYI3w&s",
+        "San Marzano":
+          "https://5.imimg.com/data5/SELLER/Default/2021/2/TZ/JL/IN/3640922/san-marzano-tomatoes.jpeg",
+        Heirloom:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmrOcZVFkP_OC3ohqVBFutO8UieE7f9lTomA&s",
+      },
+    },
+    bestVarieties: [
+      {
+        name: "Roma",
+        features: "Oval shape, thick flesh, ideal for sauces",
+        recommendedRegions: ["Maharashtra", "Karnataka"],
+      },
+      {
+        name: "Cherry",
+        features: "Small, sweet, and great for salads",
+        recommendedRegions: ["Tamil Nadu", "Andhra Pradesh"],
+      },
+      {
+        name: "Beefsteak",
+        features: "Large size, juicy texture, excellent for slicing",
+        recommendedRegions: ["Punjab", "Haryana"],
+      },
+      {
+        name: "San Marzano",
+        features: "Elongated fruit, rich flavor, preferred for canning",
+        recommendedRegions: ["Kerala", "Madhya Pradesh"],
+      },
+      {
+        name: "Heirloom",
+        features: "Unique shapes and colors, flavorful",
+        recommendedRegions: ["Uttar Pradesh", "Gujarat"],
+      },
+    ],
+    timePeriod: {
+      sowingTime: "October to November",
+      harvestingTime: "February to April",
+      totalDuration: "90-120 days",
+    },
+    cropManagement: {
+      soilPreparation: {
+        step1: "Primary tillage - deep plowing to loosen the soil",
+        step2: "Secondary tillage - fine tilth and addition of organic manure",
+        step3: "Soil type requirements: Well-drained sandy loam soil",
+        step4: "pH requirements: 6.0-7.5",
+        soilTreatment: "Use well-decomposed farmyard manure or compost",
+        bedPreparation: "Raised beds with proper spacing for drainage",
+      },
+      plantingMethod: {
+        directSeeding: {
+          process: "Not typically used; seedlings are preferred",
+          advantages: [],
+          disadvantages: [],
+        },
+        transplanting: {
+          process: "Transplant seedlings 4-6 weeks old to the field",
+          advantages: [
+            "Uniform plant growth",
+            "Better survival rate",
+            "Efficient use of seeds",
+          ],
+          disadvantages: ["Labor-intensive", "Requires nursery setup"],
+        },
+      },
+      seedTreatment: {
+        fungicideTreatment: "Treat with Thiram or Carbendazim",
+        preSoaking: "Soak seeds for 12-24 hours to improve germination",
+        otherTreatments:
+          "Inoculate seeds with Trichoderma for disease resistance",
+      },
+      spacing: {
+        rowToRow: "60-75 cm",
+        plantToPlant: "45-60 cm",
+        plantingDepth: "2-3 cm",
+      },
+      seedingDetails: {
+        seedRate: "200-400 g/ha",
+        seedQuality: "Certified seeds with 98% purity",
+        germinationPercent: "80-90%",
+      },
+      initialCare: {
+        irrigation: {
+          firstIrrigation: "Immediately after transplanting",
+          frequency: "Once every 5-7 days depending on weather",
+          waterRequirement: "500-700 mm",
+        },
+        mulching: {
+          type: "Plastic or organic mulch",
+          timing: "After transplanting",
+          benefits: [
+            "Reduces weeds",
+            "Conserves soil moisture",
+            "Prevents soil erosion",
+          ],
+        },
+        thinning: {
+          timing: "Not required for transplanted crops",
+          process: "",
+          finalSpacing: "",
+        },
+        weeding: {
+          firstWeeding: "3 weeks after transplanting",
+          frequency: "Every 2-3 weeks",
+          method: "Manual or mechanical",
+        },
+      },
+      interculturalOperations: {
+        earthingUp: "Support plants by adding soil around the base",
+        staking: "Provide stakes for support during flowering",
+        pruning: "Remove side shoots to improve yield",
+        otherOperations: ["Pest and disease control", "Nutrient management"],
+      },
+    },
+    fertilizerManagement: {
+      fertilizerImages: {
+        npkFertilizer: "npk_fertilizer_tomato.jpg",
+        ureaFertilizer: "urea_tomato_fertilizer.jpg",
+        compost: "compost_tomato.jpg",
+      },
+      basalDose: "50 kg NPK (12:32:16) per hectare",
+      topDressing: [
+        {
+          timing: "30 days after transplanting",
+          fertilizer: "50 kg urea/ha",
+        },
+        {
+          timing: "60 days after transplanting",
+          fertilizer: "50 kg urea/ha",
+        },
+      ],
+      micronutrients: "Boron and calcium to prevent blossom end rot",
+      organicFertilizers: "10-15 tons of compost per hectare",
+    },
+    diseases: {
+      diseaseImages: {
+        "Late Blight":
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTinsCh_IKs65QdgQnGDLO0bLxSG2M8ATaQ2Q&s",
+        "Tomato Mosaic Virus":
+          "https://extension.umn.edu/sites/extension.umn.edu/files/tomato-spotted-wilt-virus-fruit.jpg",
+        "Early Blight":
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrIHsfBUtCVB_7M8sxfe6d7juHAUwy_ffrzA&s",
+        "Root Knot Nematode":
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqNjRh76oc2vZtjHG56MZt1e10d6PO2OKyEQ&s",
+      },
+      list: [
+        {
+          name: "Late Blight",
+          symptoms: "Water-soaked lesions on leaves and stems",
+          solution: "Apply Mancozeb or Chlorothalonil fungicides",
+        },
+        {
+          name: "Tomato Mosaic Virus",
+          symptoms: "Mottled leaves and stunted growth",
+          solution: "Use resistant varieties and remove infected plants",
+        },
+        {
+          name: "Early Blight",
+          symptoms: "Concentric rings on leaves and fruit rot",
+          solution: "Spray Copper-based fungicides",
+        },
+        {
+          name: "Root Knot Nematode",
+          symptoms: "Galls on roots and yellowing of plants",
+          solution: "Use nematode-resistant varieties and apply nematicides",
+        },
+      ],
+    },
+  },
+  // ================================================================================================
+  // ================================================================================================
+  // ================================================================================================
+  {
+    cropName: "Mango",
+    cropImg:
+      "https://rukminim2.flixcart.com/image/850/1000/l0jwbrk0/plant-sapling/e/g/i/no-annual-yes-mango-plant-5024-1-natikrd-original-imagcbdjhnnx8jq4.jpeg?q=20&crop=false",
+    imageReferences: {
+      cropImages: ["mango_tree.jpg", "mango_fruit.jpg", "mango_farm.jpg"],
+      varietyImages: {
+        Alphonso:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROt0Ue5-xFNcOzaCRyTxop2y8tFsRTqe68XA&s",
+        Dasheri:
+          "https://m.media-amazon.com/images/I/41ZY5AGbb9L._AC_UF1000,1000_QL80_.jpg",
+        Kesar:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDU4dat7PS8CAAhTMFKU-u4LUHdPtr3fexug&s",
+        Himsagar:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSlXonCB2J6PT_e_9UqNaUNKOjkttopd5DCg&s",
+        Totapuri:
+          "https://m.media-amazon.com/images/I/81X6NFosNCL._AC_UF1000,1000_QL80_.jpg",
+      },
+    },
+    bestVarieties: [
+      {
+        name: "Alphonso",
+        features: "Rich aroma and sweetness, premium export quality",
+        recommendedRegions: ["Maharashtra", "Goa"],
+      },
+      {
+        name: "Dasheri",
+        features: "Sweet and juicy, good for fresh consumption",
+        recommendedRegions: ["Uttar Pradesh", "Punjab"],
+      },
+      {
+        name: "Kesar",
+        features: "Known as the 'Queen of Mangoes', deep saffron color",
+        recommendedRegions: ["Gujarat", "Madhya Pradesh"],
+      },
+      {
+        name: "Himsagar",
+        features: "Fiberless, creamy pulp, aromatic",
+        recommendedRegions: ["West Bengal", "Odisha"],
+      },
+      {
+        name: "Totapuri",
+        features: "Tangy flavor, ideal for pickles and processing",
+        recommendedRegions: ["Karnataka", "Tamil Nadu"],
+      },
+    ],
+    timePeriod: {
+      sowingTime: "June to July",
+      harvestingTime: "March to June",
+      totalDuration: "100-150 days for flowering and fruiting",
+    },
+    cropManagement: {
+      soilPreparation: {
+        step1: "Primary tillage - deep plowing to break hardpan",
+        step2: "Secondary tillage - fine leveling for planting pits",
+        step3: "Soil type requirements: Well-drained sandy loam soil",
+        step4: "pH requirements: 5.5-7.5",
+        soilTreatment:
+          "Incorporate organic manure and neem cake in planting pits",
+        bedPreparation:
+          "Prepare pits of size 1m x 1m x 1m for planting saplings",
+      },
+      plantingMethod: {
+        directSeeding: {
+          process: "Not applicable for mango; saplings are transplanted",
+          advantages: [],
+          disadvantages: [],
+        },
+        transplanting: {
+          process: "Plant grafted saplings or seedlings in prepared pits",
+          advantages: [
+            "Ensures true-to-type plants",
+            "Higher survival rate",
+            "Faster fruiting in grafted varieties",
+          ],
+          disadvantages: ["Labor-intensive", "Initial care required"],
+        },
+      },
+      seedTreatment: {
+        fungicideTreatment: "Treat sapling roots with Copper Oxychloride",
+        preSoaking: "Not applicable for mango",
+        otherTreatments: "Drench pits with bio-fertilizers before planting",
+      },
+      spacing: {
+        rowToRow: "10-12 m",
+        plantToPlant: "10-12 m",
+        plantingDepth: "Plant at the same depth as in the nursery",
+      },
+      seedingDetails: {
+        seedRate: "Not applicable; 100-150 saplings per hectare",
+        seedQuality: "Grafted saplings of certified varieties",
+        germinationPercent: "Not applicable",
+      },
+      initialCare: {
+        irrigation: {
+          firstIrrigation: "Immediately after planting",
+          frequency:
+            "Weekly for young plants; every 2-3 weeks for mature trees",
+          waterRequirement: "Varies; ensure proper moisture levels",
+        },
+        mulching: {
+          type: "Organic mulch such as dry leaves or straw",
+          timing: "After planting",
+          benefits: [
+            "Reduces weed growth",
+            "Conserves soil moisture",
+            "Improves soil organic matter",
+          ],
+        },
+        thinning: {
+          timing: "Not applicable for mango",
+          process: "",
+          finalSpacing: "",
+        },
+        weeding: {
+          firstWeeding: "1 month after planting",
+          frequency: "Twice a year or as required",
+          method: "Manual or chemical",
+        },
+      },
+      interculturalOperations: {
+        earthingUp: "Not required",
+        staking: "Provide support to young saplings",
+        pruning: "Remove dead or diseased branches regularly",
+        otherOperations: ["Fertilizer application", "Pest control"],
+      },
+    },
+    fertilizerManagement: {
+      fertilizerImages: {
+        npkFertilizer: "npk_fertilizer_mango.jpg",
+        ureaFertilizer: "urea_mango_fertilizer.jpg",
+        compost: "compost_mango.jpg",
+      },
+      basalDose: "Apply 10 kg organic manure per pit before planting",
+      topDressing: [
+        {
+          timing: "1st year after planting",
+          fertilizer: "100 g N, 50 g P, 100 g K per tree",
+        },
+        {
+          timing: "Annually increase by 50 g NPK until 5th year",
+          fertilizer: "After 5th year, 1 kg N, 500 g P, 1 kg K per tree",
+        },
+      ],
+      micronutrients: "Apply Zinc Sulfate and Boron if deficiencies observed",
+      organicFertilizers: "Apply 15-20 kg compost annually per tree",
+    },
+    diseases: {
+      diseaseImages: {
+        "Powdery Mildew":
+          "https://us-central1-plantix-8e0ce.cloudfunctions.net/v1/image/w400/93f83069-792c-41ac-b550-89910cba6c3a",
+        Anthracnose:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4mCVWuqs05VVq-52x2CS3g75TYJn08u83qw&s",
+        "Mango Hopper":
+          "https://blog.agriapp.com/wp-content/uploads/2024/04/sootyfruitimg_3380-1.webp",
+        "Stem Borer":
+          "https://us-central1-plantix-8e0ce.cloudfunctions.net/v1/image/w400/64245bb4-2a22-4d11-aa30-1616e2a72743",
+      },
+      list: [
+        {
+          name: "Powdery Mildew",
+          symptoms: "White powdery growth on leaves and flowers",
+          solution: "Spray Sulfur or systemic fungicides",
+        },
+        {
+          name: "Anthracnose",
+          symptoms: "Dark spots on leaves, stems, and fruits",
+          solution: "Apply Copper-based fungicides",
+        },
+        {
+          name: "Mango Hopper",
+          symptoms: "Wilting of flowers and young shoots",
+          solution: "Spray Imidacloprid or Neem oil",
+        },
+        {
+          name: "Stem Borer",
+          symptoms: "Holes and tunnels in branches and stems",
+          solution: "Apply Chlorpyrifos or remove infested branches",
+        },
+      ],
+    },
+  },
+  // ================================================================================================
+  // ================================================================================================
+  // ================================================================================================
+  {
+    cropName: "Brinjal",
+    cropImg:
+      "https://organicmandya.com/cdn/shop/files/Brinjal.jpg?v=1721370805&width=1024",
+    imageReferences: {
+      cropImages: [
+        "brinjal_field.jpg",
+        "brinjal_plant.jpg",
+        "brinjal_fruits.jpg",
+      ],
+      varietyImages: {
+        "Pusa Purple Long":
+          "https://urjaseeds.com/cdn/shop/products/brinjal_ppl_300x.jpg?v=1654512410",
+        "Arka Navneet":
+          "https://blog.agribegri.com/public/blog_images/brinjal-farming-guide-for-farmers-agribegri-600x400.jpg",
+        "Pusa Purple Cluster":
+          "https://m.media-amazon.com/images/I/817iJMQ4oOL.jpg",
+        "Arka Kesav":
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToAm6EPxHX6PPqReQVfl_FJs0pjTvPxyd-uQ&s",
+        "Black Beauty":
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToiGiWYY0XA_L_ZsL7Q-x2smMeQWBcKzgXnQ&s",
+      },
+    },
+    bestVarieties: [
+      {
+        name: "Pusa Purple Long",
+        features: "Long fruits, good for cooking and pickling",
+        recommendedRegions: ["Punjab", "Uttar Pradesh"],
+      },
+      {
+        name: "Arka Navneet",
+        features: "High-yielding hybrid with glossy fruits",
+        recommendedRegions: ["Karnataka", "Tamil Nadu"],
+      },
+      {
+        name: "Pusa Purple Cluster",
+        features: "Clustered fruit formation, good for fresh market",
+        recommendedRegions: ["Maharashtra", "Rajasthan"],
+      },
+      {
+        name: "Arka Kesav",
+        features: "Oval fruits, high tolerance to pests",
+        recommendedRegions: ["West Bengal", "Andhra Pradesh"],
+      },
+      {
+        name: "Black Beauty",
+        features: "Globular fruits, highly flavorful",
+        recommendedRegions: ["Madhya Pradesh", "Gujarat"],
+      },
+    ],
+    timePeriod: {
+      sowingTime: "June to July or January to February",
+      harvestingTime: "75-90 days after transplanting",
+      totalDuration: "120-150 days",
+    },
+    cropManagement: {
+      soilPreparation: {
+        step1: "Primary tillage - deep plowing to loosen soil",
+        step2: "Secondary tillage - harrowing and leveling",
+        step3:
+          "Soil type requirements: Well-drained sandy loam to clay loam soil",
+        step4: "pH requirements: 6.0-7.5",
+        soilTreatment: "Add farmyard manure or compost during land preparation",
+        bedPreparation: "Prepare raised beds for better drainage and aeration",
+      },
+      plantingMethod: {
+        directSeeding: {
+          process: "Not recommended for brinjal; transplanting preferred",
+          advantages: [],
+          disadvantages: [],
+        },
+        transplanting: {
+          process: "Transplant seedlings at 4-5 weeks of age",
+          advantages: [
+            "Uniform growth",
+            "High survival rate",
+            "Better crop management",
+          ],
+          disadvantages: ["Labor-intensive", "Higher initial cost"],
+        },
+      },
+      seedTreatment: {
+        fungicideTreatment: "Treat seeds with Thiram or Carbendazim",
+        preSoaking: "Soak seeds in water for 12 hours before sowing",
+        otherTreatments:
+          "Inoculate seeds with bio-fungicides for better germination",
+      },
+      spacing: {
+        rowToRow: "60 cm",
+        plantToPlant: "45 cm",
+        plantingDepth: "2-3 cm",
+      },
+      seedingDetails: {
+        seedRate: "300-400 g/ha",
+        seedQuality: "Certified seeds with 95% purity",
+        germinationPercent: "85-90%",
+      },
+      initialCare: {
+        irrigation: {
+          firstIrrigation: "Immediately after transplanting",
+          frequency: "Every 7-10 days depending on soil moisture",
+          waterRequirement: "500-600 mm during the crop cycle",
+        },
+        mulching: {
+          type: "Plastic or organic mulch",
+          timing: "After transplanting",
+          benefits: [
+            "Controls weeds",
+            "Conserves moisture",
+            "Maintains soil temperature",
+          ],
+        },
+        thinning: {
+          timing: "Not applicable for transplanted crops",
+          process: "",
+          finalSpacing: "",
+        },
+        weeding: {
+          firstWeeding: "15 days after transplanting",
+          frequency: "Every 3-4 weeks",
+          method: "Manual or mechanical",
+        },
+      },
+      interculturalOperations: {
+        earthingUp: "Promote root growth and support plants",
+        staking: "Provide support for tall varieties",
+        pruning: "Remove weak shoots to encourage better fruiting",
+        otherOperations: ["Fertilizer application", "Pest control"],
+      },
+    },
+    fertilizerManagement: {
+      fertilizerImages: {
+        npkFertilizer: "npk_fertilizer_brinjal.jpg",
+        ureaFertilizer: "urea_fertilizer_brinjal.jpg",
+        compost: "compost_brinjal.jpg",
+      },
+      basalDose: "20 tons FYM and 60:60:40 NPK kg/ha before planting",
+      topDressing: [
+        {
+          timing: "30 days after transplanting",
+          fertilizer: "30 kg Urea/ha",
+        },
+        {
+          timing: "60 days after transplanting",
+          fertilizer: "30 kg Urea/ha",
+        },
+      ],
+      micronutrients: "Apply Zinc Sulfate and Boron based on soil test",
+      organicFertilizers: "5-6 tons of compost per hectare",
+    },
+    diseases: {
+      diseaseImages: {
+        "Bacterial Wilt":
+          "https://cdn.shopify.com/s/files/1/0762/3639/0696/files/Bacterial-Wilt-Management-in-Eggplant1_480x480.webp?v=1714725477",
+        "Phomopsis Blight":
+          "https://agritech.tnau.ac.in/crop_protection/images/brinjal_ph_diseases/2.phomopsis3.jpg",
+        "Fruit and Shoot Borer":
+          "https://cdn.shopify.com/s/files/1/0762/3639/0696/files/20a32132-6c94-4eeb-bffa-87d6e9b8c49a_480x480_11zon_1_480x480.webp?v=1722334486",
+        "Damping Off":
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHobXwoNDJNvwm16d7AK2R12cUb-uJvuciww&s",
+      },
+      list: [
+        {
+          name: "Bacterial Wilt",
+          symptoms: "Wilting of plants and brown discoloration in stems",
+          solution: "Use resistant varieties and crop rotation",
+        },
+        {
+          name: "Phomopsis Blight",
+          symptoms: "Dark sunken spots on fruits and stems",
+          solution: "Spray Copper-based fungicides",
+        },
+        {
+          name: "Fruit and Shoot Borer",
+          symptoms: "Boring into shoots and fruits causing damage",
+          solution: "Apply Neem oil or insecticides like Carbaryl",
+        },
+        {
+          name: "Damping Off",
+          symptoms: "Seedling collapse with water-soaked lesions",
+          solution: "Use treated seeds and avoid overwatering",
+        },
+      ],
+    },
+  },
+  // ================================================================================================
+  // ================================================================================================
+  // ================================================================================================
+  {
+    cropName: "Bitter Gourd",
+    cropImg:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf_uXfC4GPcy8fMWZbWnaxe1bhL3ow46RDAA&s",
+    imageReferences: {
+      cropImages: [
+        "bitter_gourd_field.jpg",
+        "bitter_gourd_plant.jpg",
+        "bitter_gourd_fruit.jpg",
+      ],
+      varietyImages: {
+        "Pusa Do Mausami":
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWeIFA5RL0_UkxonNjZVezSK3UcHLd9SsosA&s",
+        "Arka Harit": "",
+        "Coimbatore Long":
+          "https://www.ampimex.in/wp-content/uploads/2021/02/bitter-gourd.jpg",
+        Preethi:
+          "https://creativefarmer.in/cdn/shop/products/81zR9TokcTL._SL1500.jpg?v=1616235651",
+      },
+    },
+    bestVarieties: [
+      {
+        name: "Pusa Do Mausami",
+        features: "Good yield, medium-sized fruits, dark green color",
+        recommendedRegions: ["Delhi", "Punjab", "Haryana"],
+      },
+      {
+        name: "Arka Harit",
+        features: "Resistant to pests, prolific bearer",
+        recommendedRegions: ["Karnataka", "Tamil Nadu", "Andhra Pradesh"],
+      },
+      {
+        name: "Coimbatore Long",
+        features: "Long fruits, highly productive variety",
+        recommendedRegions: ["Tamil Nadu", "Kerala"],
+      },
+      {
+        name: "Priya",
+        features: "Short, dark green fruits, high yield",
+        recommendedRegions: ["Maharashtra", "Gujarat"],
+      },
+      {
+        name: "Preethi",
+        features: "Resistant to diseases, uniform fruiting",
+        recommendedRegions: ["West Bengal", "Bihar"],
+      },
+    ],
+    timePeriod: {
+      sowingTime: "January to March and June to July",
+      harvestingTime: "May to June and October to November",
+      totalDuration: "90-110 days",
+    },
+    cropManagement: {
+      soilPreparation: {
+        step1: "Primary tillage - plowing to a depth of 20-25 cm",
+        step2: "Secondary tillage - leveling the soil",
+        step3: "Soil type requirements: Well-drained sandy loam preferred",
+        step4: "pH requirements: 6.0-7.5",
+        soilTreatment: "Apply 10-15 tons of farmyard manure per hectare",
+        bedPreparation: "Raised beds with furrows for proper drainage",
+      },
+      plantingMethod: {
+        directSeeding: {
+          process: "Direct sowing of seeds in prepared beds",
+          advantages: ["Easy to establish", "Suitable for large-scale farming"],
+          disadvantages: [
+            "Susceptible to pests",
+            "Requires careful monitoring",
+          ],
+        },
+        transplanting: {
+          process: "Transplanting seedlings raised in a nursery",
+          advantages: [
+            "Ensures better plant establishment",
+            "Minimizes seed wastage",
+          ],
+          disadvantages: ["Labor-intensive", "Higher costs"],
+        },
+      },
+      seedTreatment: {
+        fungicideTreatment: "Thiram to protect seeds from fungal infections",
+        preSoaking: "Soak seeds in warm water for 24 hours",
+        otherTreatments: "Treat with Trichoderma for enhanced growth",
+      },
+      spacing: {
+        rowToRow: "2-3 m",
+        plantToPlant: "30-50 cm",
+        plantingDepth: "2-3 cm",
+      },
+      seedingDetails: {
+        seedRate: "4-5 kg/ha",
+        seedQuality: "Viable seeds with 90% germination",
+        germinationPercent: "80-90%",
+      },
+      initialCare: {
+        irrigation: {
+          firstIrrigation: "Immediately after sowing",
+          frequency: "Weekly or as required depending on soil moisture",
+          waterRequirement: "400-600 mm",
+        },
+        mulching: {
+          type: "Dry grass or plastic mulch",
+          timing: "After seedling establishment",
+          benefits: [
+            "Reduces weed growth",
+            "Maintains soil temperature",
+            "Conserves moisture",
+          ],
+        },
+        thinning: {
+          timing: "2 weeks after sowing",
+          process: "Remove weaker plants",
+          finalSpacing: "Ensure adequate spacing for growth",
+        },
+        weeding: {
+          firstWeeding: "2-3 weeks after planting",
+          frequency: "Every 3-4 weeks",
+          method: "Manual or mechanical",
+        },
+      },
+      interculturalOperations: {
+        earthingUp: "Not typically required",
+        staking: "Use stakes or trellis for vine support",
+        pruning: "Prune lateral shoots for better growth",
+        otherOperations: ["Fertilizer application", "Pest control"],
+      },
+    },
+    fertilizerManagement: {
+      fertilizerImages: {
+        npkFertilizer: "npk_fertilizer_bitter_gourd.jpg",
+        ureaFertilizer: "urea_fertilizer_bitter_gourd.jpg",
+        compost: "compost_bitter_gourd.jpg",
+      },
+      basalDose: "20 tons of farmyard manure per hectare",
+      topDressing: [
+        {
+          timing: "30 days after planting",
+          fertilizer: "30 kg nitrogen/ha",
+        },
+        {
+          timing: "60 days after planting",
+          fertilizer: "30 kg nitrogen/ha",
+        },
+      ],
+      micronutrients: "Apply boron and zinc based on soil test results",
+      organicFertilizers: "10 tons of compost per hectare",
+    },
+    diseases: {
+      diseaseImages: {
+        "Powdery Mildew":
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEpqTUSYQVWWU0DqKU_h7nAhup9SRXqpOqwg&s",
+        "Downy Mildew":
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKAIKtSZ71ZSfRwKmO4S_gn5U5vM7nljadVw&s",
+        "Fruit Fly":
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfWgoXErzF4SlrKGJkNODCfGcdh5idfoi_lQ&s",
+        Anthracnose:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF1L3s3EQC6D9PgoYm9UMhUFpXwP5cDQGNPw&s",
+      },
+      list: [
+        {
+          name: "Powdery Mildew",
+          symptoms: "White powdery spots on leaves",
+          solution: "Spray sulfur-based fungicides",
+        },
+        {
+          name: "Downy Mildew",
+          symptoms: "Yellow spots with a cottony growth on leaves",
+          solution: "Use Metalaxyl-based fungicides",
+        },
+        {
+          name: "Fruit Fly",
+          symptoms: "Distorted fruits with holes",
+          solution: "Use pheromone traps or apply Malathion spray",
+        },
+        {
+          name: "Anthracnose",
+          symptoms: "Sunken spots on leaves and fruits",
+          solution: "Apply Carbendazim or Mancozeb",
+        },
+      ],
+    },
+  },
+  // ================================================================================================
+  // ================================================================================================
+  // ================================================================================================
+
+  {
+    cropName: "Pumpkin",
+    cropImg:
+      "https://www.thespruce.com/thmb/fcOA9H8kBWzGWcmICmB1i2czDtY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-147003040-86f76dfc543d4a719eed6ccd3395c2b7.jpg",
+    imageReferences: {
+      cropImages: [
+        "pumpkin_field.jpg",
+        "pumpkin_plant.jpg",
+        "pumpkin_fruits.jpg",
+      ],
+      varietyImages: {
+        "Arka Suryamukhi":
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk7timA3egIjw5wFqdxpgjTAhrYQOpiKstnw&s",
+        "Pusa Vishwas":
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJbQYjEjpSvMBm16qnIG7wiPTnB5eoSfsI3w&s",
+        Cinderella:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEnGMfGTvgemWzpxhntFmJbeNr5hg5aBOFrA&s",
+        "Atlantic Giant":
+          "https://m.media-amazon.com/images/I/61yYoUfscoL._AC_UF1000,1000_QL80_.jpg",
+        "Green Delight":
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRtWHRFbxd5rT2l47mSqaBCP5z6yUgRe_RmA&s",
+      },
+    },
+    bestVarieties: [
+      {
+        name: "Arka Suryamukhi",
+        features: "High-yielding variety with sweet flesh",
+        recommendedRegions: ["Karnataka", "Maharashtra"],
+      },
+      {
+        name: "Pusa Vishwas",
+        features: "Disease-resistant variety with uniform fruits",
+        recommendedRegions: ["Punjab", "Uttar Pradesh"],
+      },
+      {
+        name: "Cinderella",
+        features: "Decorative variety with flavorful flesh",
+        recommendedRegions: ["Himachal Pradesh", "Uttarakhand"],
+      },
+      {
+        name: "Atlantic Giant",
+        features: "Large-sized fruits, ideal for exhibitions",
+        recommendedRegions: ["West Bengal", "Odisha"],
+      },
+      {
+        name: "Green Delight",
+        features: "Compact variety suitable for small farms",
+        recommendedRegions: ["Tamil Nadu", "Kerala"],
+      },
+    ],
+    timePeriod: {
+      sowingTime: "June to July or January to February",
+      harvestingTime: "90-120 days after sowing",
+      totalDuration: "100-150 days",
+    },
+    cropManagement: {
+      soilPreparation: {
+        step1: "Primary tillage - deep plowing to improve soil aeration",
+        step2: "Secondary tillage - harrowing and leveling",
+        step3:
+          "Soil type requirements: Well-drained sandy loam to clay loam soil",
+        step4: "pH requirements: 6.0-7.5",
+        soilTreatment:
+          "Add well-rotted manure or compost during land preparation",
+        bedPreparation:
+          "Prepare raised beds or mounds for planting seeds or seedlings",
+      },
+      plantingMethod: {
+        directSeeding: {
+          process: "Sow seeds directly in prepared pits or mounds",
+          advantages: [
+            "Simpler method",
+            "Requires less labor",
+            "Suitable for large areas",
+          ],
+          disadvantages: ["Vulnerable to uneven germination"],
+        },
+        transplanting: {
+          process: "Transplant seedlings at 3-4 weeks of age",
+          advantages: [
+            "Ensures uniform growth",
+            "Higher survival rate",
+            "Allows better crop scheduling",
+          ],
+          disadvantages: ["Labor-intensive", "Time-consuming"],
+        },
+      },
+      seedTreatment: {
+        fungicideTreatment:
+          "Treat seeds with Thiram or Captan to prevent diseases",
+        preSoaking: "Soak seeds in water for 12 hours to improve germination",
+        otherTreatments: "Use bio-stimulants for better seed vigor",
+      },
+      spacing: {
+        rowToRow: "2-3 meters",
+        plantToPlant: "1.5-2 meters",
+        plantingDepth: "2-3 cm",
+      },
+      seedingDetails: {
+        seedRate: "2-3 kg/ha",
+        seedQuality: "Certified seeds with 98% purity",
+        germinationPercent: "85-90%",
+      },
+      initialCare: {
+        irrigation: {
+          firstIrrigation: "Immediately after sowing or transplanting",
+          frequency: "Every 5-7 days in dry conditions",
+          waterRequirement: "400-600 mm during the crop cycle",
+        },
+        mulching: {
+          type: "Organic or plastic mulch",
+          timing: "Apply immediately after planting",
+          benefits: [
+            "Retains soil moisture",
+            "Prevents weed growth",
+            "Maintains soil temperature",
+          ],
+        },
+        thinning: {
+          timing: "2-3 weeks after germination",
+          process: "Remove weak seedlings to ensure proper spacing",
+          finalSpacing: "1.5-2 meters",
+        },
+        weeding: {
+          firstWeeding: "2 weeks after sowing",
+          frequency: "Every 3-4 weeks",
+          method: "Manual or mechanical",
+        },
+      },
+      interculturalOperations: {
+        earthingUp: "Provide support for roots during growth",
+        staking: "Not required for creeping varieties",
+        pruning: "Remove side shoots to focus growth on main vine",
+        otherOperations: ["Fertilizer application", "Pest control"],
+      },
+    },
+    fertilizerManagement: {
+      fertilizerImages: {
+        npkFertilizer: "npk_fertilizer_pumpkin.jpg",
+        ureaFertilizer: "urea_fertilizer_pumpkin.jpg",
+        compost: "compost_pumpkin.jpg",
+      },
+      basalDose: "20 tons FYM and 60:40:30 NPK kg/ha before planting",
+      topDressing: [
+        {
+          timing: "30 days after sowing",
+          fertilizer: "20 kg Urea/ha",
+        },
+        {
+          timing: "60 days after sowing",
+          fertilizer: "20 kg Urea/ha",
+        },
+      ],
+      micronutrients: "Apply Zinc and Boron based on soil test results",
+      organicFertilizers: "5-7 tons of compost per hectare",
+    },
+    diseases: {
+      diseaseImages: {
+        "Powdery Mildew":
+          "https://cdn.mos.cms.futurecdn.net/S6TndtkEW3u6v6eYDrxBxT.jpg",
+        "Downy Mildew":
+          "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRcFaZPyc0LLnjLQVYhhn-iqqWWQ8DOWKgmTDWbh9wrS9Y_csFg3B0oattDC32x",
+        "Fruit Rot":
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmUe5qE1G9JYR-5CkpVnwVtfvTpUEj4IvOf_XhjeW5rngQMHctsfbtGZCVBwiK",
+        "Pumpkin Beetle":
+          "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS9GBiVfkn5WzsKIeQgoZ_OhKzdniTAxpC6_oB7tpKESMh6YJVU0qBSsqUvSMU6",
+      },
+      list: [
+        {
+          name: "Powdery Mildew",
+          symptoms: "White powdery spots on leaves and stems",
+          solution: "Spray Sulfur-based fungicides",
+        },
+        {
+          name: "Downy Mildew",
+          symptoms: "Yellow spots on leaves with downy growth underneath",
+          solution: "Use systemic fungicides like Metalaxyl",
+        },
+        {
+          name: "Fruit Rot",
+          symptoms: "Soft, water-soaked patches on fruits",
+          solution: "Ensure proper drainage and apply Copper fungicides",
+        },
+        {
+          name: "Pumpkin Beetle",
+          symptoms: "Chewing damage on leaves and flowers",
+          solution: "Apply Neem oil or insecticides like Carbaryl",
+        },
+      ],
+    },
+  },
+  // ================================================================================================
+  // ================================================================================================
+  // ================================================================================================
+
+  {
+    cropName: "Beans",
+    cropImg:
+      "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS1u3WpQlDkZXaEiqonJVb21q73_DqjiwsIejJZ5UfFa0p0vEmx5yjNOJS-qfMK",
+    imageReferences: {
+      cropImages: ["beans_field.jpg", "beans_plant.jpg", "beans_pods.jpg"],
+      varietyImages: {
+        "Arka Anoop":
+          "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQvlM4gDe2znK9kvKVcII5DR8Jf-2Nad8GREavd412iuXetybzMdQesYiMSFgII",
+        "Pusa Parvati":
+          "http://eagri.org/eagri50/HORT281/lec18_clip_image005.jpg",
+        Contender:
+          "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT3lc8GWSzvId-zRIKkLTgH2KZd0sWBaL__nPdbaNJObaBFcwu55z4J2GftOhZs",
+        "Top Crop":
+          "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRmYlRhaMLbQgebpFX9GJm3DU1LmGEtn8GPf_Gy73tlVlv1W4g4nriFaxXr_WUu",
+        "Kentucky Wonder":
+          "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS3q2lAG53xFqk-YSVKhXb75Y_ydyhiAuqj_PYkEP3BUg6sLAh1mN9DkYJawmM4",
+      },
+    },
+    bestVarieties: [
+      {
+        name: "Arka Anoop",
+        features: "Resistant to anthracnose and rust, high yield",
+        recommendedRegions: ["Karnataka", "Tamil Nadu"],
+      },
+      {
+        name: "Pusa Parvati",
+        features: "Suitable for cooler climates, excellent quality pods",
+        recommendedRegions: ["Himachal Pradesh", "Uttarakhand"],
+      },
+      {
+        name: "Contender",
+        features: "Early maturing variety, drought tolerant",
+        recommendedRegions: ["Madhya Pradesh", "Maharashtra"],
+      },
+      {
+        name: "Top Crop",
+        features: "High-yielding variety with uniform pods",
+        recommendedRegions: ["Punjab", "Haryana"],
+      },
+      {
+        name: "Kentucky Wonder",
+        features: "Popular pole bean variety, flavorful pods",
+        recommendedRegions: ["Kerala", "West Bengal"],
+      },
+    ],
+    timePeriod: {
+      sowingTime: "February to March and July to September",
+      harvestingTime: "May to June and October to November",
+      totalDuration: "50-70 days",
+    },
+    cropManagement: {
+      soilPreparation: {
+        step1: "Primary tillage - plow to loosen soil up to 15-20 cm",
+        step2: "Secondary tillage - fine tilth and leveling",
+        step3: "Soil type requirements: Sandy loam to clay loam",
+        step4: "pH requirements: 5.5-6.5",
+        soilTreatment: "Incorporate compost or well-rotted manure",
+        bedPreparation: "Raised beds with furrows for irrigation",
+      },
+      plantingMethod: {
+        directSeeding: {
+          process: "Plant seeds directly in the field in furrows",
+          advantages: ["Simpler and faster", "Reduces transplanting shock"],
+          disadvantages: [
+            "Requires proper spacing",
+            "Careful irrigation needed",
+          ],
+        },
+        transplanting: {
+          process: "Seedlings are raised in trays and transplanted",
+          advantages: ["Uniform spacing and growth", "Better survival rate"],
+          disadvantages: ["Labor-intensive", "Not common for beans"],
+        },
+      },
+      seedTreatment: {
+        fungicideTreatment:
+          "Thiram or Carbendazim to control seed-borne diseases",
+        preSoaking: "Soak seeds for 4-6 hours for better germination",
+        otherTreatments:
+          "Treat seeds with Rhizobium culture for nitrogen fixation",
+      },
+      spacing: {
+        rowToRow: "45-60 cm",
+        plantToPlant: "10-15 cm",
+        plantingDepth: "2-3 cm",
+      },
+      seedingDetails: {
+        seedRate: "25-30 kg/ha",
+        seedQuality: "Certified seeds with high germination rate",
+        germinationPercent: "85-90%",
+      },
+      initialCare: {
+        irrigation: {
+          firstIrrigation: "Immediately after sowing",
+          frequency: "Weekly or based on soil moisture",
+          waterRequirement: "300-400 mm",
+        },
+        mulching: {
+          type: "Organic or plastic mulch",
+          timing: "After planting",
+          benefits: [
+            "Conserves moisture",
+            "Controls weeds",
+            "Maintains soil temperature",
+          ],
+        },
+        thinning: {
+          timing: "2-3 weeks after sowing",
+          process: "Remove weak seedlings to maintain spacing",
+          finalSpacing: "10-15 cm",
+        },
+        weeding: {
+          firstWeeding: "3 weeks after planting",
+          frequency: "Every 2-3 weeks",
+          method: "Manual or mechanical",
+        },
+      },
+      interculturalOperations: {
+        earthingUp: "Not required",
+        staking: "Use stakes for pole bean varieties",
+        pruning: "Not required for most bush varieties",
+        otherOperations: ["Fertilizer application", "Pest management"],
+      },
+    },
+    fertilizerManagement: {
+      fertilizerImages: {
+        npkFertilizer: "npk_fertilizer_beans.jpg",
+        ureaFertilizer: "urea_fertilizer_beans.jpg",
+        compost: "compost_beans.jpg",
+      },
+      basalDose:
+        "20-25 kg nitrogen, 50 kg phosphorus, and 30 kg potassium per hectare",
+      topDressing: [
+        {
+          timing: "30 days after sowing",
+          fertilizer: "10-15 kg nitrogen/ha",
+        },
+      ],
+      micronutrients: "Apply zinc and boron based on soil tests",
+      organicFertilizers: "5-10 tons of farmyard manure per hectare",
+    },
+    diseases: {
+      diseaseImages: {
+        Anthracnose:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7nAaAmyZfncAzwwFAutJfINmd0aBxcdLyEH7ydaZ3P1Of32Ri0WIB6oUUW-qF",
+        Rust: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTdjTws9HH8o_4Hp3--8EPUsV7ebqW0p9hwjKmkvwp4aftAC80XMD62qg7NDO4J",
+        "Powdery Mildew":
+          "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQrJ1g-Opb85EWa6hfhSzBUUT1f258B0qB2z4tRcFKBH2L1r4LAuF-3dLaAv5WX",
+        "Bean Mosaic Virus":
+          "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTqSO0Ghpybv-8wn87hr3ZkqUxvyWdWXae5RKJ3O-7fVaTnEV2Z8WJDawA2qb6a",
+      },
+      list: [
+        {
+          name: "Anthracnose",
+          symptoms: "Dark, sunken spots on pods and leaves",
+          solution: "Spray Mancozeb or Chlorothalonil",
+        },
+        {
+          name: "Rust",
+          symptoms: "Reddish-brown pustules on leaves",
+          solution: "Use systemic fungicides like Propiconazole",
+        },
+        {
+          name: "Powdery Mildew",
+          symptoms: "White powdery growth on leaves",
+          solution: "Spray sulfur-based fungicides",
+        },
+        {
+          name: "Bean Mosaic Virus",
+          symptoms: "Mosaic pattern on leaves and stunted growth",
+          solution: "Remove infected plants and use virus-free seeds",
         },
       ],
     },
   },
 
-  // ================================================================================================
-  // ================================================================================================
-  // ================================================================================================
+  {
+    cropName: "Chili",
+    cropImg: "https://cdn.britannica.com/62/118162-050-56CC9480/cultivar-Thai-chili-peppers-fruits.jpg",
+    imageReferences: {
+      cropImages: ["chili_field.jpg", "chili_plant.jpg", "chili_pods.jpg"],
+      varietyImages: {
+        Guntur: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmoiEoRI0tk3PfvSZ8SUH_GZxb_YN4TvuTug&s",
+        Byadagi: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY7MCXdEV5omYISCfLgBmdLmf3AenSMl36Xw&s",
+        Kanthari: "https://cdn-hplcf.nitrocdn.com/LOlGVLgIEBtVUTuwYxsjjbJTZirHUQmS/assets/images/optimized/rev-30fb0fb/gardenhunt.com/wp-content/uploads/2022/10/Chilli-small-1.jpg",
+        "Pusa Jwala": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmfN7LyHhndhP4qpiup-BQVGDWRoTBBKeELQ&s",
+        "Pant C-1": "https://parajulianish.wordpress.com/wp-content/uploads/2015/02/chillie-1.jpg",
+      },
+    },
+    bestVarieties: [
+      {
+        name: "Guntur",
+        features: "High pungency and deep red color",
+        recommendedRegions: ["Andhra Pradesh", "Telangana"],
+      },
+      {
+        name: "Byadagi",
+        features: "Bright red color, medium pungency",
+        recommendedRegions: ["Karnataka", "Tamil Nadu"],
+      },
+      {
+        name: "Kanthari",
+        features: "Small, white fruits, highly pungent",
+        recommendedRegions: ["Kerala", "Tamil Nadu"],
+      },
+      {
+        name: "Pusa Jwala",
+        features: "Widely grown, medium pungency, green turning red",
+        recommendedRegions: ["Rajasthan", "Uttar Pradesh"],
+      },
+      {
+        name: "Pant C-1",
+        features: "Early maturing, medium pungency",
+        recommendedRegions: ["Uttarakhand", "Himachal Pradesh"],
+      },
+    ],
+    timePeriod: {
+      sowingTime: "June to July and December to January",
+      harvestingTime: "September to October and March to April",
+      totalDuration: "150-180 days",
+    },
+    cropManagement: {
+      soilPreparation: {
+        step1: "Deep plowing to loosen soil up to 20-25 cm",
+        step2: "Leveling and fine tilth preparation",
+        step3: "Soil type requirements: Sandy loam to clay loam",
+        step4: "pH requirements: 6.0-7.5",
+        soilTreatment: "Incorporate organic matter or compost",
+        bedPreparation: "Raised beds with proper drainage",
+      },
+      plantingMethod: {
+        directSeeding: {
+          process: "Sow seeds directly in the field",
+          advantages: ["Simpler process", "Lower labor cost"],
+          disadvantages: ["Uneven germination", "Lower survival rate"],
+        },
+        transplanting: {
+          process:
+            "Raise seedlings in nursery beds and transplant at 4-6 weeks",
+          advantages: ["Uniform plant population", "Higher survival and yield"],
+          disadvantages: ["Labor-intensive", "Costly process"],
+        },
+      },
+      seedTreatment: {
+        fungicideTreatment:
+          "Treat seeds with Carbendazim to prevent fungal infections",
+        preSoaking: "Soak seeds in water for 12 hours for faster germination",
+        otherTreatments: "Treat seeds with Trichoderma for disease resistance",
+      },
+      spacing: {
+        rowToRow: "60-75 cm",
+        plantToPlant: "45-60 cm",
+        plantingDepth: "2-3 cm",
+      },
+      seedingDetails: {
+        seedRate: "1.5-2.0 kg/ha",
+        seedQuality: "Certified seeds with high germination rate",
+        germinationPercent: "85-90%",
+      },
+      initialCare: {
+        irrigation: {
+          firstIrrigation: "Immediately after sowing or transplanting",
+          frequency: "Weekly or based on soil moisture",
+          waterRequirement: "500-700 mm",
+        },
+        mulching: {
+          type: "Organic mulch like straw or plastic mulch",
+          timing: "Apply after planting",
+          benefits: [
+            "Reduces weeds",
+            "Retains soil moisture",
+            "Controls temperature",
+          ],
+        },
+        thinning: {
+          timing: "3 weeks after germination",
+          process: "Remove weaker seedlings",
+          finalSpacing: "45-60 cm",
+        },
+        weeding: {
+          firstWeeding: "3-4 weeks after planting",
+          frequency: "Every 3-4 weeks",
+          method: "Manual or chemical",
+        },
+      },
+      interculturalOperations: {
+        earthingUp: "Support plants during growth",
+        staking: "Use stakes for better support in taller varieties",
+        pruning: "Remove lower branches to prevent diseases",
+        otherOperations: ["Fertilizer application", "Pest control"],
+      },
+    },
+    fertilizerManagement: {
+      fertilizerImages: {
+        npkFertilizer: "https://",
+        ureaFertilizer: "https://",
+        compost: "https://",
+      },
+      basalDose:
+        "50 kg nitrogen, 25 kg phosphorus, and 25 kg potassium per hectare",
+      topDressing: [
+        {
+          timing: "30 days after transplanting",
+          fertilizer: "20 kg nitrogen/ha",
+        },
+        {
+          timing: "60 days after transplanting",
+          fertilizer: "20 kg nitrogen/ha",
+        },
+      ],
+      micronutrients: "Apply magnesium and zinc as needed",
+      organicFertilizers: "10-15 tons of farmyard manure per hectare",
+    },
+    diseases: {
+      diseaseImages: {
+        Anthracnose: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-me4c2GTEKGDDDa8WGftzMUurIM9bKZmEKA&s",
+        "Powdery Mildew": "https://www.ignitionseeds.co.nz/cdn/shop/files/mildew.webp?v=1681859991&width=1500",
+        "Chili Mosaic Virus": "https://kisanvedika.bighaat.com/wp-content/uploads/2023/04/MicrosoftTeams-image-14-302x420.jpg",
+        "Fusarium Wilt": "https://www.planetnatural.com/wp-content/uploads/2012/12/fusarium-wilt-tomato.jpg",
+      },
+      list: [
+        {
+          name: "Anthracnose",
+          symptoms: "Sunken spots on fruits and stems",
+          solution: "Spray Mancozeb or Copper Oxychloride",
+        },
+        {
+          name: "Powdery Mildew",
+          symptoms: "White powdery coating on leaves",
+          solution: "Apply sulfur-based fungicides",
+        },
+        {
+          name: "Chili Mosaic Virus",
+          symptoms: "Mottling and leaf distortion",
+          solution: "Use virus-free seeds and remove infected plants",
+        },
+        {
+          name: "Fusarium Wilt",
+          symptoms: "Yellowing and wilting of plants",
+          solution: "Drench soil with Carbendazim solution",
+        },
+      ],
+    },
+  },
 ];
 
 export default cropData;

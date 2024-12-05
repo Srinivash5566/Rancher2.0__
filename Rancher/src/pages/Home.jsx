@@ -71,9 +71,9 @@ const Home = () => {
           <Link to="/Community" className={component.nav_link}>
             Community
           </Link>
-          <Link to="#" className={component.nav_link}>
+          {/* <Link to="#" className={component.nav_link}>
             About
-          </Link>
+          </Link> */}
         </nav>
       </div>
       <main className={component.home_grid}>

@@ -104,9 +104,9 @@ const Community = () => {
         <Link to="/Community" className={component.nav_link_in}>
           Community
         </Link>
-        <Link to="#" className={component.nav_link}>
+        {/* <Link to="#" className={component.nav_link}>
           About
-        </Link>
+        </Link> */}
       </nav>
 
       <div className={component.chat_container}>
