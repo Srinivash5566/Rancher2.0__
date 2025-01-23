@@ -6,6 +6,7 @@ import { MdDelete } from "react-icons/md";
 import api from "../api";
 import { CgClose } from "react-icons/cg";
 import { useAuth } from "../AuthContext";
+import Theme from "../multfun/Theme";
 
 const HarvestingEngines = () => {
   const navigate = useNavigate();
@@ -223,17 +224,30 @@ const HarvestingEngines = () => {
           className="search-bar"
           onChange={(e) => setSearch(e.target.value)}
         />
-        <div className="auth-buttons">
-          {isLoggedIn ? (
-            <button className="log-out" onClick={logout}>
-              Log Out
-            </button>
-          ) : (
-            <>
-              <button onClick={() => navigate("/RegisterPage")}>Sign Up</button>
-              <button onClick={() => navigate("/LoginPage")}>Log In</button>
-            </>
-          )}
+        <div className="icbtmBox">
+          <Theme />
+          <div className="auth-buttons">
+            {isLoggedIn ? (
+              <button className="log-out" onClick={logout}>
+                Log Out
+              </button>
+            ) : (
+              <>
+                <button
+                  className="sign-in"
+                  onClick={() => navigate("/RegisterPage")}
+                >
+                  Sign Up
+                </button>
+                <button
+                  className="log-in"
+                  onClick={() => navigate("/LoginPage")}
+                >
+                  Log In
+                </button>
+              </>
+            )}
+          </div>
         </div>
       </header>
 

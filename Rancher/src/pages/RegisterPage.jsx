@@ -1,17 +1,17 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import api from '../api';
-import { useAuth } from '../AuthContext';
-import './stylesheet/LoginPage.css';
-import styles from './stylesheet/component.module.css';
-import { GoArrowLeft } from 'react-icons/go';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import api from "../api";
+import { useAuth } from "../AuthContext";
+import "./stylesheet/LoginPage.css";
+import styles from "./stylesheet/component.module.css";
+import { GoArrowLeft } from "react-icons/go";
 
 const RegisterPage = () => {
-  const [userName, setUserName] = useState('');
-  const [email, setEmail] = useState('');
-  const [otp, setOtp] = useState('');
-  const [password, setPassword] = useState('');
-  const [Cpassword, setCpassword] = useState('');
+  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [otp, setOtp] = useState("");
+  const [password, setPassword] = useState("");
+  const [Cpassword, setCpassword] = useState("");
   const [otpSent, setOtpSent] = useState(false); // Track OTP sent status
   const [timer, setTimer] = useState(30); // 30 seconds countdown
   const navigate = useNavigate();
@@ -23,25 +23,36 @@ const RegisterPage = () => {
       return alert("Passwords do not match.");
     }
     try {
-      const response = await api.post('/auth/register', { userName, email, password, otp });
+      const response = await api.post("/auth/register", {
+        userName,
+        email,
+        password,
+        otp,
+      });
       const { token, user } = response.data;
       login(token, user.userName, user.email);
       navigate(-1); // Go back after successful registration
     } catch (error) {
-      alert('Registration error:', error.response ? error.response.data : error.message);
+      alert(
+        "Registration error:",
+        error.response ? error.response.data : error.message
+      );
     }
   };
 
   const handleSendOtp = async (e) => {
     e.preventDefault();
     try {
-      const response = await api.post('/auth/sendOtp', { email });
+      const response = await api.post("/auth/sendOtp", { email });
       alert(response.data.message || "OTP sent successfully");
       setOtpSent(true);
       setTimer(30); // Reset timer after sending OTP
       startTimer(); // Start countdown
     } catch (err) {
-      alert('Error sending OTP:', err.response ? err.response.data : err.message);
+      alert(
+        "Error sending OTP:",
+        err.response ? err.response.data : err.message
+      );
     }
   };
 
@@ -93,7 +104,9 @@ const RegisterPage = () => {
               onChange={(e) => setEmail(e.target.value)}
               required
             />
-            <button type="submit" className="login-btn">Get OTP</button>
+            <button type="submit" className="login-btn">
+              Get OTP
+            </button>
           </form>
         )}
 
@@ -128,12 +141,17 @@ const RegisterPage = () => {
               {timer > 0 ? (
                 <p>Resend OTP in {timer} seconds</p>
               ) : (
-                <p onClick={handleResendOtp} style={{ color: 'blue', cursor: 'pointer' }}>
+                <p
+                  onClick={handleResendOtp}
+                  style={{ color: "blue", cursor: "pointer" }}
+                >
                   Resend OTP
                 </p>
               )}
             </div>
-            <button type="submit" className="login-btn">Sign Up</button>
+            <button type="submit" className="login-btn">
+              Sign Up
+            </button>
           </form>
         )}
       </div>

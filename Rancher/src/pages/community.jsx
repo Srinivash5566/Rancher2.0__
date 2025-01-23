@@ -4,6 +4,7 @@ import component from "./stylesheet/component.module.css";
 import api from "../api";
 import { MdDelete } from "react-icons/md";
 import { useAuth } from "../AuthContext";
+import Theme from "../multfun/Theme";
 
 const Community = () => {
   const navigate = useNavigate();
@@ -73,24 +74,30 @@ const Community = () => {
           className="search-bar"
           onChange={(e) => setSearch(e.target.value)}
         />
-        <div className="auth-buttons">
-          {isLoggedIn ? (
-            <button className="log-out" onClick={logout}>
-              Log Out
-            </button>
-          ) : (
-            <>
-              <button
-                className="sign-in"
-                onClick={() => navigate("/RegisterPage")}
-              >
-                Sign Up
+        <div className="icbtmBox">
+          <Theme />
+          <div className="auth-buttons">
+            {isLoggedIn ? (
+              <button className="log-out" onClick={logout}>
+                Log Out
               </button>
-              <button className="log-in" onClick={() => navigate("/LoginPage")}>
-                Log In
-              </button>
-            </>
-          )}
+            ) : (
+              <>
+                <button
+                  className="sign-in"
+                  onClick={() => navigate("/RegisterPage")}
+                >
+                  Sign Up
+                </button>
+                <button
+                  className="log-in"
+                  onClick={() => navigate("/LoginPage")}
+                >
+                  Log In
+                </button>
+              </>
+            )}
+          </div>
         </div>
       </header>
 
