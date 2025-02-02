@@ -1,12 +1,12 @@
 // src/pages/Home.jsx
 import { Link, useNavigate } from "react-router-dom";
 import component from "./stylesheet/component.module.css";
-import cropData from "./cropData";
 import { useState, useEffect } from "react";
 import { useAuth } from "../AuthContext"; // Import the useAuth hook
 import Theme from "../multfun/Theme";
 
 const Home = () => {
+  const cropData = null;
   const navigate = useNavigate();
   const { isLoggedIn, logout } = useAuth(); // Access isLoggedIn and logout from context
   const [search, setSearch] = useState("");
@@ -23,10 +23,12 @@ const Home = () => {
       setFilteredCrops(results); // Update the filtered crops
     }
   }, [search]);
+
   const defaultImage = "https://placehold.co/600x400";
   function getImageUrl(img) {
     return img ? img : defaultImage;
   }
+
   return (
     <div className="app">
       <div className="headDiv">
@@ -85,12 +87,13 @@ const Home = () => {
           <div
             key={index}
             className={component.home_card}
-            onClick={() => navigate(`/${crop.cropName}`)} // Assuming you want to navigate to a unique crop page
+            onClick={() => navigate(`/${crop.cropName}`)}
           >
             <img src={getImageUrl(crop.cropImg)} alt="placeholder" />
             <div className={component.home_card_content}>
               <h3>{crop.cropName}</h3>
-              <h6>{crop.timePeriod.sowingTime}</h6>
+              <h6></h6>
+              {/*_______________________________new__________crop.Price                */}
             </div>
           </div>
         ))}
