@@ -38,3 +38,4 @@ router.put("/updateSeed/:id", async (req, res) => {
     res.status(500).send("Server error");
   }
 });
+module.exports = router;

@@ -3,7 +3,7 @@ const { dbUrlLocal, dbUrl } = require("../constants");
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(dbUrl);
+    await mongoose.connect(dbUrlLocal);
     console.log("Database connection successful...");
   } catch (e) {
     console.error("Database connection error:", e);

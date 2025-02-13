@@ -5,6 +5,7 @@ const connectDB = require("./config/db");
 const userMsg = require("./routes/userMsg.routes");
 const authRoutes = require("./routes/auth");
 const EngineRouter = require("./routes/HarvestingEngine.routes");
+const CropRouter = require("./routes/cropSeed.routes");
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(express.json());
 app.use("/api/userMsg", userMsg);
 app.use("/api/auth", authRoutes);
 app.use("/api/Engine", EngineRouter);
+app.use("/api/crop",CropRouter);
 
 const PORT = process.env.PORT || 5050;
 app.listen(PORT, () => {

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const _ = mongoose.model({
+const cropSeedSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -25,11 +25,11 @@ const _ = mongoose.model({
     default: 0,
   },
   image: {
-    type: String,
+    type: [String],
     required: true,
   },
 });
 
-const cropSeed = mongoose.model("cropSeed", _);
+const cropSeed = mongoose.model("CropSeed", cropSeedSchema);
 
 module.exports = { cropSeed };
