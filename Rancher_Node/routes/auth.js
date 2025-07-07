@@ -15,7 +15,7 @@ const transporter = nodemailer.createTransport({
   secure: false,
   auth: {
     user: "rancher.akenterprise@gmail.com",
-    pass:"ddgm yfjv nzzd axjd",
+    pass:"---------------------",
   },
 });
 // send OTP
