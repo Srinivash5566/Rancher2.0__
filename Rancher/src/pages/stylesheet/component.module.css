@@ -12,7 +12,6 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-
 .logo {
   font-size: 28px;
   font-weight: 600;
@@ -35,7 +34,8 @@ body {
 
 .search_bar {
   width: 300px;
-  padding: 10px;
+  margin: 0px;
+  padding: 10p x;
   border-radius: 8px;
   border: 1px solid #ffffff;
   font-size: 14px;
@@ -63,12 +63,13 @@ body {
 .nav_bar {
   display: flex;
   justify-content: center;
-  background-color: #282a35;
-  padding: 2px;
+  /* background-color: #282a35; */
+  background-color: var(--Nav_Bar);
 }
 
 .nav_link {
-  color: #43da9a;
+  /* color: #43da9a; */
+  color: white;
   text-decoration: none;
   font-weight: 500;
   padding: 12px 20px;
@@ -76,6 +77,7 @@ body {
 }
 .nav_link_in {
   color: #ffffff;
+  background-color: #38ba84;
   text-decoration: none;
   font-weight: 500;
   padding: 12px 20px;
@@ -83,9 +85,7 @@ body {
 }
 
 .nav_link:hover {
-  background-color: #43da9a;
-  color: white;
-  border-radius: 5px;
+  background-color: rgb(0, 0, 0);
 }
 /* --------------- */
 /* General Page Styling */
@@ -117,7 +117,8 @@ body {
   display: flex;
   flex-direction: column;
   padding: 15px;
-  max-width: 300px;
+  width: 300px;
+  height: 400px ;
   cursor: pointer;
   border: 1px solid #ddd;
 }
@@ -219,7 +220,6 @@ body {
 .Icon:hover {
   transform: scale(1.1);
 }
-
 /* ------------------------------------------------------------------------------------------------ */
 
 /* Harvesting Engines Styles */
@@ -886,10 +886,6 @@ body {
     gap: 10px;
     margin-top: 10px;
   }
-
-  /* .nav_bar {
-      flex-direction: column;
-    } */
 
   .nav_link {
     padding: 10px 15px;
