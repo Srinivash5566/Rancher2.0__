@@ -117,8 +117,8 @@ body {
   display: flex;
   flex-direction: column;
   padding: 15px;
-  width: 300px;
-  height: 400px ;
+  max-width: 300px;
+  /* height: 300px ; */
   cursor: pointer;
   border: 1px solid #ddd;
 }
@@ -193,7 +193,7 @@ body {
 }
 
 .home_card_footer button {
-  background: #FFD814; /* Amazon Yellow */
+  background: #ffd814; /* Amazon Yellow */
   border: none;
   padding: 8px 12px;
   font-size: 14px;
@@ -206,7 +206,7 @@ body {
 }
 
 .home_card_footer button:hover {
-  background: #F7CA00;
+  background: #f7ca00;
 }
 
 /* Icon Styling */
@@ -479,81 +479,136 @@ body {
 /* Community Styles */
 
 /* ------------------------------------------------------------------------------------------------ */
+/* ================= FarmFusion AI – Community Chat UI ================= */
 
+.community {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: linear-gradient(180deg, #eef7f2, #f9fffb);
+}
+
+/* ---------- Chat Header ---------- */
+.community .header {
+  background: linear-gradient(90deg, #0c1b27, #123c2f);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #ffffff;
+}
+
+.community .logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #43da9a;
+}
+
+/* ---------- Chat Container ---------- */
 .chat_container {
+  flex: 1;
   padding: 20px;
-  padding-bottom: 80px;
-  /* Bottom padding for space above fixed input container */
-  background-color: var(--body_background);
-  min-height: 450px;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
-.chat_message {
-  margin-bottom: 20px;
-  background-color: #fff;
-  padding: 12px;
-  width: 800px;
-  border-radius: 20px;
-  color: #333;
-}
-
+/* ---------- Chat Bubble (Common) ---------- */
+.chat_message,
 .user_message {
-  margin-bottom: 20px;
-  padding: 12px;
-  width: 800px;
-  border-radius: 20px;
-  color: #333;
-  background-color: #d0ffcd;
+  max-width: 70%;
+  padding: 12px 16px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
+/* ---------- Other / AI Messages ---------- */
+.chat_message {
+  align-self: flex-start;
+  background: #ffffff;
+  border-top-left-radius: 6px;
+}
+
+/* ---------- User Messages ---------- */
+.user_message {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #43da9a, #36b88e);
+  color: #0c1b27;
+  border-top-right-radius: 6px;
+}
+
+/* ---------- Message Header ---------- */
 .message_header {
-  font-size: 12px;
-  color: #777;
-  margin-bottom: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.7;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
+/* ---------- Message Body ---------- */
 .message_body {
   font-size: 14px;
-  color: #333;
 }
 
+/* ---------- Input Area ---------- */
 .message_input_container {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  background-color: #0c1b27;
-  position: fixed;
-  /* Fix to the bottom of the viewport */
+  position: sticky;
   bottom: 0;
-  width: 100%;
-  /* Full width across screen */
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-  /* Optional: shadow to add visual separation */
+  background: #0c1b27;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .message_input_container input {
-  width: 80%;
-  padding: 12px;
-  border-radius: 8px;
-  margin-bottom: 0px;
-  border: 1px solid #ccc;
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 14px;
 }
 
 .message_input_container button {
-  padding: 5px 24px;
-  height: 45px;
-  border-radius: 8px;
-  margin-right: 20px;
-  background-color: #43da9a;
-  color: white;
+  background: linear-gradient(135deg, #43da9a, #36b88e);
+  color: #0c1b27;
   border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .message_input_container button:hover {
-  background-color: #36b88e;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------- Scrollbar ---------- */
+.chat_container::-webkit-scrollbar {
+  width: 6px;
+}
+.chat_container::-webkit-scrollbar-thumb {
+  background: #36b88e;
+  border-radius: 10px;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+  .chat_message,
+  .user_message {
+    max-width: 90%;
+  }
 }
 
 /* ------------------------------------------------------------------------------------------------ */

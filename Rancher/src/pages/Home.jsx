@@ -59,9 +59,15 @@ const Home = () => {
         </header>
 
         <nav className={component.nav_bar}>
-          <Link to="/" className={component.nav_link_in}>Home</Link>
-          <Link to="/HarvestingEngines" className={component.nav_link}>Harvesting Engines</Link>
-          <Link to="/Community" className={component.nav_link}>Community</Link>
+          <Link to="/" className={component.nav_link}>
+            RancherAI
+          </Link>
+          <Link to="/RancherBuySeeds" className={component.nav_link_in}>
+            AgriKart
+          </Link>
+          <Link to="/HarvestingEngines" className={component.nav_link}>
+            Harvesting Engines
+          </Link>
         </nav>
       </div>
 
@@ -72,12 +78,19 @@ const Home = () => {
             className={component.home_card}
             onClick={() => navigate(`/${encodeURIComponent(crop.name)}`)}
           >
-            <img src={crop.images.length > 0 ? crop.images[0] : "fallback_image_url"} alt={crop.name} />
+            <img
+              src={
+                crop.images.length > 0 ? crop.images[0] : "fallback_image_url"
+              }
+              alt={crop.name}
+            />
             <div className={component.home_card_content}>
               <h3>{crop.name}</h3>
               <div className={component.home_card_price}>
-              <h4 className={component.disc}>-{crop.discount}%</h4>
-              <h4 className={component.DINR}>₹{(crop.price * (1 - crop.discount / 100)).toFixed(2)}</h4>
+                <h4 className={component.disc}>-{crop.discount}%</h4>
+                <h4 className={component.DINR}>
+                  ₹{(crop.price * (1 - crop.discount / 100)).toFixed(2)}
+                </h4>
               </div>
               <h5>₹{crop.price.toFixed(2)}</h5>
             </div>

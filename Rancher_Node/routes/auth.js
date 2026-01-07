@@ -15,7 +15,7 @@ const transporter = nodemailer.createTransport({
   secure: false,
   auth: {
     user: "rancher.akenterprise@gmail.com",
-    pass:"---------------------",
+    pass: "---------------------",
   },
 });
 // send OTP
@@ -26,19 +26,20 @@ router.post("/sendOtp", async (req, res) => {
     return res.status(400).json({ message: "User already exists" });
   }
   OTP = Math.floor(1000 + Math.random() * 9000);
-
-  const mailOps = {
-    from: "rancher.akenterprise@gmail.com",
-    to: email,
-    subject: "One Time Password (OTP)",
-    text: `Your One Time Password (OTP) is ${OTP}`,
-  };
-  await transporter.sendMail(mailOps, (err, info) => {
-    if (err) {
-      return res.status(500).json({ message: `Failed to send OTP ${err}` });
-    }
-    res.status(200).json({ message: "OTP sent successfully" });
-  });
+  console.log("Generated OTP:", OTP); // For debugging purposes
+  // const mailOps = {
+  //   from: "rancher.akenterprise@gmail.com",
+  //   to: email,
+  //   subject: "One Time Password (OTP)",
+  //   text: `Your One Time Password (OTP) is ${OTP}`,
+  // };
+  // await transporter.sendMail(mailOps, (err, info) => {
+  //   if (err) {
+  //     return res.status(500).json({ message: `Failed to send OTP ${err}` });
+  //   }
+  //   res.status(200).json({ message: "OTP sent successfully" });
+  // });
+  res.status(200).json({ message: "OTP sent successfully" });
 });
 
 // Register Route

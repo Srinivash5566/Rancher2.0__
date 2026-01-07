@@ -44,6 +44,8 @@ const Community = () => {
       try {
         await api.post("/userMsg/Msg", newMsg);
         const res = await api.get("/userMsg/getMsg");
+        console.log(res);
+
         setMessages(res.data);
         setNewMessage("");
       } catch (err) {
@@ -66,14 +68,10 @@ const Community = () => {
 
   return (
     <div className={component.community}>
+      {/* ================= HEADER ================= */}
       <header className="header">
-        <div className="logo">Rancher</div>
-        <input
-          type="text"
-          placeholder="Type to Search..."
-          className="search-bar"
-          onChange={(e) => setSearch(e.target.value)}
-        />
+        <div className="logo">🌱 FarmFusion AI</div>
+
         <div className="icbtmBox">
           <Theme />
           <div className="auth-buttons">
@@ -101,50 +99,70 @@ const Community = () => {
         </div>
       </header>
 
+      {/* ================= NAV ================= */}
       <nav className={component.nav_bar}>
-        <Link to="/" className={component.nav_link}>
-          Home
+        <Link to="/" className={component.nav_link_in}>
+          RancherAI
+        </Link>
+        <Link to="/RancherBuySeeds" className={component.nav_link}>
+          AgriKart
         </Link>
         <Link to="/HarvestingEngines" className={component.nav_link}>
           Harvesting Engines
         </Link>
-        <Link to="/Community" className={component.nav_link_in}>
-          Community
-        </Link>
-        {/* <Link to="#" className={component.nav_link}>
-          About
-        </Link> */}
       </nav>
 
+      {/* ================= CHAT AREA ================= */}
       <div className={component.chat_container}>
-        {messages.map((msg) => (
-          <div
-            key={msg.msgId}
-            className={`${
-              msg.userName === localStorage.getItem("userName")
-                ? component.user_message
-                : component.chat_message
-            }`}
-          >
-            <div className={component.message_header}>
-              ~ {msg.userName}
-              {msg.userName === localStorage.getItem("userName") && (
-                <MdDelete
-                  onClick={() => delMsg(msg.msgId)}
-                  style={{ cursor: "pointer", marginLeft: "10px" }}
-                />
-              )}
+        {/* Welcome message */}
+        {messages.length === 0 && (
+          <div className={component.chat_message}>
+            <div className={component.message_header}>🌱 FarmFusion AI</div>
+            <div className={component.message_body}>
+              Hello Farmer 👋 <br />I can help you with crop selection, soil
+              health, pests, irrigation, weather insights, and farming
+              equipment.
             </div>
-            <div className={component.message_body}>{msg.Msg}</div>
           </div>
-        ))}
+        )}
+
+        {/* Chat Messages */}
+        {messages.map((msg) => {
+          const isUser = msg.userName === localStorage.getItem("userName");
+
+          return (
+            <div
+              key={msg.msgId}
+              className={
+                isUser ? component.user_message : component.chat_message
+              }
+            >
+              <div className={component.message_header}>
+                {isUser ? "👨‍🌾 You" : "🌱 FarmFusion AI / Community"}
+
+                {isUser && (
+                  <MdDelete
+                    onClick={() => delMsg(msg.msgId)}
+                    style={{ cursor: "pointer", marginLeft: "8px" }}
+                    title="Delete message"
+                  />
+                )}
+              </div>
+
+              <div className={component.message_body}>{msg.Msg}</div>
+            </div>
+          );
+        })}
       </div>
+
+      {/* ================= INPUT ================= */}
       <div className={component.message_input_container}>
         <input
           type="text"
-          placeholder="Type your question"
+          placeholder="Ask FarmFusion AI about crops, soil, weather, pests..."
           value={newMessage}
           onChange={(e) => setNewMessage(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
         />
         <button onClick={handleSendMessage}>Send</button>
       </div>

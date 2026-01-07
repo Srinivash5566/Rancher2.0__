@@ -253,17 +253,14 @@ const HarvestingEngines = () => {
 
       <nav className={component.nav_bar}>
         <Link to="/" className={component.nav_link}>
-          Home
+          RancherAI
+        </Link>
+        <Link to="/RancherBuySeeds" className={component.nav_link}>
+          AgriKart
         </Link>
         <Link to="/HarvestingEngines" className={component.nav_link_in}>
           Harvesting Engines
         </Link>
-        <Link to="/Community" className={component.nav_link}>
-          Community
-        </Link>
-        {/* <Link to="#" className={component.nav_link}>
-          About
-        </Link> */}
       </nav>
 
       {loading && (
