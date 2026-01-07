@@ -18,7 +18,8 @@ function generateTimeId() {
 // POST route for creating a new message
 router.post("/Msg", async (req, res) => {
   const { userName, Msg } = req.body;
-  const apiKey = "AIzaSyCq3cgutsqPysio4eWxiEO_UiMLM0sudbE";
+  const apiKey =
+    "________________________Enter The Api Key________________________";
   const model = "models/gemini-2.5-flash";
   try {
     const newUserMsg = new UserMsg({ msgId: generateTimeId(), userName, Msg });

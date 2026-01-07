@@ -27,18 +27,18 @@ router.post("/sendOtp", async (req, res) => {
   }
   OTP = Math.floor(1000 + Math.random() * 9000);
   console.log("Generated OTP:", OTP); // For debugging purposes
-  // const mailOps = {
-  //   from: "rancher.akenterprise@gmail.com",
-  //   to: email,
-  //   subject: "One Time Password (OTP)",
-  //   text: `Your One Time Password (OTP) is ${OTP}`,
-  // };
-  // await transporter.sendMail(mailOps, (err, info) => {
-  //   if (err) {
-  //     return res.status(500).json({ message: `Failed to send OTP ${err}` });
-  //   }
-  //   res.status(200).json({ message: "OTP sent successfully" });
-  // });
+  const mailOps = {
+    from: "rancher.akenterprise@gmail.com",
+    to: email,
+    subject: "One Time Password (OTP)",
+    text: `Your One Time Password (OTP) is ${OTP}`,
+  };
+  await transporter.sendMail(mailOps, (err, info) => {
+    if (err) {
+      return res.status(500).json({ message: `Failed to send OTP ${err}` });
+    }
+    res.status(200).json({ message: "OTP sent successfully" });
+  });
   res.status(200).json({ message: "OTP sent successfully" });
 });
 
