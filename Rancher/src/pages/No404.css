@@ -1,33 +1,87 @@
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
+/* ── 404 PAGE ──────────────────────────────────────── */
 
 .n404 {
-    background-color: #1d2a35;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    /* Center text */
+  background-color: var(--bg-base, #0f1712);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: var(--font-primary, "Inter", sans-serif);
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.n404::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(46, 125, 50, 0.07) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.txts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
 }
 
 #no {
-    color: white;
-    font-size: 60px;
+  font-family: var(--font-display, "DM Serif Display", serif);
+  color: var(--accent_primary, #81c784);
+  font-size: clamp(80px, 15vw, 140px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -4px;
+  margin-bottom: 8px;
 }
 
 #msg {
-    color: white;
-    font-size: 24px;
-    /* Adjusted font size */
+  color: var(--main_color, #e8f5e9);
+  font-size: clamp(20px, 4vw, 30px);
+  font-weight: 600;
+  letter-spacing: -0.5px;
 }
 
 #we {
-    color: white;
-    font-size: 18px;
-    /* Adjusted font size */
+  color: var(--text_muted, #a5d6a7);
+  font-size: clamp(14px, 2.5vw, 17px);
+  max-width: 400px;
+  line-height: 1.6;
+}
+
+.n404-btn {
+  margin-top: 20px;
+  padding: 12px 28px;
+  border-radius: 12px;
+  border: none;
+  background: var(--accent_primary, #81c784);
+  color: #fff;
+  font-family: var(--font-primary, "Inter", sans-serif);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(46, 125, 50, 0.25);
+}
+
+.n404-btn:hover {
+  background: var(--accent_hover, #2e7d32);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(46, 125, 50, 0.35);
 }

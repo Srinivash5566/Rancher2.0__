@@ -1,104 +1,324 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap");
+
 :root {
-  --body_background: #1d2a35;
-  --header_background: #0e1a23;
-  --search_border: none;
-  --main_color: white;
-  --search_background: #f1f1f1;
-  --box_shadow: none;
-  --Nav_Bar: #282a35;
-}
-[data-theme="light"] {
-  --body_background: #f4f4f4;
-  --header_background: rgb(255, 255, 255);
-  --search_border: 1px solid #c7c7c7;
-  --main_color: black;
-  --search_background: #fff;
-  --box_shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-  --Nav_Bar:rgb(50, 50, 50);
-}
-body {
-  margin: 0;
-  min-width: 650px;
-  font-family: "Arial", sans-serif;
-  background-color: var(--body_background);
-  height: 100vh;
+  --bg-base: #0f1712;
+  --bg-surface: #141d16;
+  --bg-elevated: #1b2a1e;
+  --bg-card: rgba(27, 42, 30, 0.88);
+  --bg-glass: rgba(255, 255, 255, 0.03);
+
+  --border-subtle: rgba(129, 199, 132, 0.08);
+  --border-default: rgba(129, 199, 132, 0.14);
+  --border-strong: rgba(129, 199, 132, 0.3);
+
+  --text-primary: #e8f5e9;
+  --text-secondary: #a5d6a7;
+  --text-muted: #5a7d5c;
+
+  --accent: #81c784;
+  --accent-dim: #2e7d32;
+  --accent-glow: rgba(129, 199, 132, 0.18);
+  --accent-warm: #d4a855;
+  --accent-warm-dim: #b88c3a;
+
+  --danger: #d4675a;
+  --danger-bg: rgba(212, 103, 90, 0.1);
+
+  --header-height: 68px;
+  --nav-height: 56px;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.5);
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.2);
+  --shadow-card-hover: 0 16px 40px rgba(0, 0, 0, 0.35);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition: 0.3s var(--ease-out);
+
+  --font-primary: "Inter", "DM Sans", sans-serif;
+  --font-display: "DM Serif Display", serif;
+
+  /* Legacy compat vars used across components */
+  --body_background: var(--bg-base);
+  --header_background: rgba(15, 23, 18, 0.9);
+  --search_border: 1px solid var(--border-default);
+  --main_color: var(--text-primary);
+  --text_muted: var(--text-secondary);
+  --search_background: var(--bg-glass);
+  --box_shadow: var(--shadow-md);
+  --Nav_Bar: rgba(27, 42, 30, 0.7);
+  --accent_primary: var(--accent);
+  --accent_hover: var(--accent-dim);
+  --card_bg: var(--bg-card);
+  --border_color: var(--border-default);
 }
 
+[data-theme="light"] {
+  --bg-base: #f9fafb;
+  --bg-surface: #f1f5f1;
+  --bg-elevated: #e8efe8;
+  --bg-card: rgba(255, 255, 255, 0.95);
+  --bg-glass: rgba(46, 125, 50, 0.03);
+
+  --border-subtle: rgba(46, 125, 50, 0.06);
+  --border-default: rgba(46, 125, 50, 0.12);
+  --border-strong: rgba(46, 125, 50, 0.25);
+
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --text-muted: #9ca3af;
+
+  --accent: #2e7d32;
+  --accent-dim: #1b5e20;
+  --accent-glow: rgba(46, 125, 50, 0.1);
+  --accent-warm: #c49435;
+  --accent-warm-dim: #a67c26;
+
+  --danger: #c0453a;
+  --danger-bg: rgba(192, 69, 58, 0.08);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.12);
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 12px 32px rgba(0, 0, 0, 0.12);
+
+  /* Legacy compat */
+  --body_background: var(--bg-base);
+  --header_background: rgba(249, 250, 251, 0.92);
+  --search_border: 1px solid var(--border-default);
+  --main_color: var(--text-primary);
+  --text_muted: var(--text-secondary);
+  --search_background: var(--bg-glass);
+  --Nav_Bar: rgba(241, 245, 241, 0.85);
+  --accent_primary: var(--accent);
+  --accent_hover: var(--accent-dim);
+  --card_bg: var(--bg-card);
+  --border_color: var(--border-default);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 360px;
+  font-family: var(--font-primary);
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  min-height: 100vh;
+  transition:
+    background-color 0.45s var(--ease-out),
+    color 0.45s var(--ease-out);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+.app,
+.pageContainer,
+#root > div {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── HEADER ─────────────────────────────────────── */
 .header {
   display: flex;
   justify-content: space-between;
-  margin: 0px;
   align-items: center;
-  padding: 15px 20px;
+  padding: 0 clamp(16px, 4vw, 36px);
+  height: var(--header-height);
   background-color: var(--header_background);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-subtle);
+  position: sticky;
+  top: 0;
+  z-index: 200;
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #00b67a;
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--accent);
+  letter-spacing: -0.5px;
+  flex-shrink: 0;
+  user-select: none;
 }
 
+.headDiv {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background-color: var(--bg-base);
+}
+
+/* ── SEARCH BAR ──────────────────────────────────── */
+.search-wrapper {
+  flex: 1;
+  max-width: 420px;
+  margin: 0 32px;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-default);
+  background-color: var(--bg-glass);
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  transition: all var(--transition);
+  outline: none;
+  backdrop-filter: blur(8px);
+}
+
+.search-bar:focus {
+  border-color: var(--accent);
+  background-color: var(--bg-elevated);
+  box-shadow: 0 0 0 4px var(--accent-glow);
+}
+
+.search-bar::placeholder {
+  color: var(--text-muted);
+}
+
+/* ── ICON BOX ────────────────────────────────────── */
 .icbtmBox {
   display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
 }
-.search-bar {
-  padding: 5px;
-  border-radius: 4px;
-  border: var(--search_border);
-  width: 300px;
-  margin: 0px;
-  background-color: var(--search_background);
-  /* Light background for input */
+
+/* ── AUTH BUTTONS ────────────────────────────────── */
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 .auth-buttons button {
-  margin-left: 10px;
-  padding: 8px 16px;
-  background-color: #00b67a;
-  color: white;
-  border: none;
-  border-radius: 4px;
+  padding: 9px 20px;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: var(--radius-pill);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all var(--transition);
+  border: none;
+  outline: none;
+  white-space: nowrap;
 }
 
-.auth-buttons button:hover {
-  background-color: #019463;
+.auth-buttons button.sign-in,
+.auth-buttons button.log-out {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 16px var(--accent-glow);
+}
+
+.auth-buttons button.sign-in:hover,
+.auth-buttons button.log-out:hover {
+  background: var(--accent-dim);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px var(--accent-glow);
 }
 
 .auth-buttons button.log-in {
-  background-color: transparent;
-  color: #00b67a;
-  border: 1px solid #00b67a;
-  transition: background-color 0.3s ease;
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-default);
 }
 
 .auth-buttons button.log-in:hover {
-  background-color: transparent;
-  color: #019463;
-  border: 1px solid #019463;
-}
-/* -------changed button aster backend----------------   */
-
-.auth-buttons button.log-in {
-  background-color: transparent;
-  color: #00b67a;
-  border: 1px solid #00b67a;
-  transition: background-color 0.3s ease;
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-glow);
 }
 
-.auth-buttons button.log-in:hover {
-  background-color: transparent;
-  color: #019463;
-  border: 1px solid #019463;
+/* ── MAIN ────────────────────────────────────────── */
+main {
+  flex-grow: 1;
 }
 
-footer {
-  height: 50px;
-  width: 100%;
-  position: fixed;
-  bottom: 0px;
-  background-color: var(--header_background);
-  box-shadow: var(--box_shadow);
+/* ── SCROLLBAR ───────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-dim);
+}
+
+/* ── RESPONSIVE ──────────────────────────────────── */
+/* ── RESPONSIVE: Tablet ──────────────────────────── */
+@media (max-width: 1024px) {
+  .search-wrapper {
+    max-width: 320px;
+    margin: 0 20px;
+  }
+}
+
+/* ── RESPONSIVE: Mobile ──────────────────────────── */
+@media (max-width: 640px) {
+  .header {
+    padding: 0 16px;
+    height: 56px;
+  }
+
+  .search-wrapper {
+    margin: 0 12px;
+    max-width: none;
+    flex: 1;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .auth-buttons {
+    gap: 6px;
+  }
+
+  .auth-buttons button {
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+
+  .icbtmBox {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-wrapper {
+    display: none;
+  }
 }

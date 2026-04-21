@@ -1,4 +1,3 @@
-// src/pages/LoginPage.jsx
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../api";
@@ -19,52 +18,65 @@ const LoginPage = () => {
       const response = await api.post("/auth/login", { email, password });
       const { token, user } = response.data;
       const { userName, email: userEmail } = user;
-
       login(token, userName, userEmail);
-
       navigate(-1);
     } catch (error) {
       const errorMessage =
-        error.response && error.response.data && error.response.data.message
-          ? error.response.data.message
-          : "An unknown error occurred";
+        error.response?.data?.message ?? "An unknown error occurred";
       alert(`Login error: ${errorMessage}`);
     }
   };
 
   return (
-    <div className="login-page">
-      <div className="login-container">
-        <div className="backButtonContainer">
+    <main className="login-page" aria-label="Login Page">
+      <section className="login-container" aria-labelledby="login-header">
+        <header className="backButtonContainer">
           <GoArrowLeft
-            className={`${styles.backButton}`}
+            className={styles.backButton}
             onClick={() => navigate(-1)}
+            aria-label="Go back"
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") navigate(-1);
+            }}
           />
-          <h2>Login</h2>
-        </div>
+          <h2 id="login-header">Login</h2>
+        </header>
+
         <form onSubmit={handleLogin}>
-          <label>Email</label>
-          <input
-            type="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <label>Password</label>
-          <input
-            type="password"
-            placeholder="Enter your password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <button type="submit" className="login-btn">
-            Log In
-          </button>
+          <fieldset style={{ border: "none", padding: 0, margin: 0 }}>
+            <legend style={{ display: "none" }}>Login Credentials</legend>
+
+            <label htmlFor="login-email">Email</label>
+            <input
+              id="login-email"
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              aria-required="true"
+            />
+
+            <label htmlFor="login-password">Password</label>
+            <input
+              id="login-password"
+              type="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              aria-required="true"
+            />
+
+            <button type="submit" className="login-btn">
+              Log In
+            </button>
+          </fieldset>
         </form>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 

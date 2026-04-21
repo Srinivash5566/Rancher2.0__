@@ -4,7 +4,7 @@ import component from "../pages/stylesheet/component.module.css";
 
 const Theme = () => {
   const [isLightMode, setIsLightMode] = useState(
-    !!localStorage.getItem("lightMode")
+    !!localStorage.getItem("lightMode"),
   );
 
   const toggleTheme = () => {

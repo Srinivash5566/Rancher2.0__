@@ -8,7 +8,6 @@ const BuyPage = () => {
   const location = useLocation();
   const { selectedCrop } = location.state || {};
 
-  // State for user input
   const [formData, setFormData] = useState({
     name: "",
     address: "",
@@ -18,14 +17,26 @@ const BuyPage = () => {
 
   if (!selectedCrop) {
     return (
-      <div className={styles.buyPageContainer}>
-        <nav className={styles.buyHeader}>
-          <GoArrowLeft className={styles.buyBackButton} onClick={() => navigate(-1)} />
-          <h1 className={styles.buyHeaderTitle}>Rancher</h1>
-        </nav>
-        <main className={styles.buyNotFound}>
-          <h2>No item selected for purchase! 😢</h2>
-          <button onClick={() => navigate("/")}>Back to Home</button>
+      <div className={styles.ckPage}>
+        <header className={styles.ckTopBar}>
+          <GoArrowLeft
+            className={styles.ckBack}
+            onClick={() => navigate(-1)}
+            aria-label="Go back"
+            role="button"
+            tabIndex={0}
+          />
+          <h1 className={styles.ckLogo}>Rancher</h1>
+        </header>
+        <main className={styles.ckEmptyState}>
+          <span className={styles.ckEmptyIcon}>🛒</span>
+          <h2 className={styles.ckEmptyTitle}>Nothing to checkout</h2>
+          <p className={styles.ckEmptyDesc}>
+            Select a product first to proceed with purchase.
+          </p>
+          <button onClick={() => navigate("/")} className={styles.ckEmptyBtn}>
+            Browse Products
+          </button>
         </main>
       </div>
     );
@@ -41,45 +52,155 @@ const BuyPage = () => {
     navigate("/");
   };
 
+  const discountedPrice = (
+    selectedCrop.price *
+    (1 - selectedCrop.discount / 100)
+  ).toFixed(2);
+
   return (
-    <div className={styles.buyPageContainer}>
-      <nav className={styles.buyHeader}>
-        <GoArrowLeft className={styles.buyBackButton} onClick={() => navigate(-1)} />
-        <h1 className={styles.buyHeaderTitle}>Checkout</h1>
-      </nav>
-
-      <div className={styles.buyCheckoutContainer}>
-        {/* Order Summary */}
-        <div className={styles.buyOrderSummary}>
-          <img className={styles.buyOrderImage} src={selectedCrop.images[0]} alt={selectedCrop.name} />
-          <h2>{selectedCrop.name}</h2>
-          <p>{selectedCrop.category}</p>
-          <h4>₹{(selectedCrop.price * (1 - selectedCrop.discount / 100)).toFixed(2)}</h4>
-          <h5 className={styles.buyOriginalPrice}>₹{selectedCrop.price.toFixed(2)}</h5>
+    <div className={styles.ckPage}>
+      <header className={styles.ckTopBar}>
+        <GoArrowLeft
+          className={styles.ckBack}
+          onClick={() => navigate(-1)}
+          aria-label="Go back"
+          role="button"
+          tabIndex={0}
+        />
+        <h1 className={styles.ckLogo}>Checkout</h1>
+        <div className={styles.ckSteps}>
+          <span className={styles.ckStepActive}>1. Details</span>
+          <span className={styles.ckStepDot}>→</span>
+          <span className={styles.ckStep}>2. Confirm</span>
         </div>
+      </header>
 
-        {/* Checkout Form */}
-        <form className={styles.buyCheckoutForm} onSubmit={handleSubmit}>
-          <label>Name:</label>
-          <input type="text" name="name" value={formData.name} onChange={handleChange} required />
+      <main className={styles.ckBody}>
+        {/* Form Section */}
+        <section className={styles.ckFormSection}>
+          <h2 className={styles.ckFormTitle}>Delivery Information</h2>
+          <form className={styles.ckForm} onSubmit={handleSubmit}>
+            <fieldset className={styles.ckFieldset}>
+              <legend className={styles.ckLegend}>
+                Delivery &amp; Payment
+              </legend>
 
-          <label>Address:</label>
-          <textarea name="address" value={formData.address} onChange={handleChange} required />
+              <div className={styles.ckField}>
+                <label htmlFor="checkout-name" className={styles.ckLabel}>
+                  Full Name
+                </label>
+                <input
+                  id="checkout-name"
+                  type="text"
+                  name="name"
+                  className={styles.ckInput}
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="John Doe"
+                  required
+                  aria-required="true"
+                />
+              </div>
 
-          <label>Phone:</label>
-          <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required />
+              <div className={styles.ckField}>
+                <label htmlFor="checkout-address" className={styles.ckLabel}>
+                  Delivery Address
+                </label>
+                <textarea
+                  id="checkout-address"
+                  name="address"
+                  className={styles.ckTextarea}
+                  value={formData.address}
+                  onChange={handleChange}
+                  placeholder="Street, City, State, PIN"
+                  required
+                  aria-required="true"
+                  rows="3"
+                />
+              </div>
 
-          <label>Payment Method:</label>
-          <select name="paymentMethod" value={formData.paymentMethod} onChange={handleChange}>
-            <option value="Credit Card">Credit Card</option>
-            <option value="Debit Card">Debit Card</option>
-            <option value="UPI">UPI</option>
-            <option value="Cash on Delivery">Cash on Delivery</option>
-          </select>
+              <div className={styles.ckField}>
+                <label htmlFor="checkout-phone" className={styles.ckLabel}>
+                  Phone Number
+                </label>
+                <input
+                  id="checkout-phone"
+                  type="tel"
+                  name="phone"
+                  className={styles.ckInput}
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="+91 XXXXX XXXXX"
+                  required
+                  aria-required="true"
+                />
+              </div>
 
-          <button type="submit" className={styles.buyConfirmButton}>Confirm Purchase</button>
-        </form>
-      </div>
+              <div className={styles.ckField}>
+                <label htmlFor="checkout-payment" className={styles.ckLabel}>
+                  Payment Method
+                </label>
+                <select
+                  id="checkout-payment"
+                  name="paymentMethod"
+                  className={styles.ckSelect}
+                  value={formData.paymentMethod}
+                  onChange={handleChange}
+                >
+                  <option value="Credit Card">Credit Card</option>
+                  <option value="Debit Card">Debit Card</option>
+                  <option value="UPI">UPI</option>
+                  <option value="Cash on Delivery">Cash on Delivery</option>
+                </select>
+              </div>
+
+              <button type="submit" className={styles.ckSubmitBtn}>
+                Place Order — ₹{discountedPrice}
+              </button>
+            </fieldset>
+          </form>
+        </section>
+
+        {/* Order Summary Sidebar */}
+        <aside className={styles.ckSummary}>
+          <h3 className={styles.ckSummaryTitle}>Order Summary</h3>
+          <div className={styles.ckSummaryCard}>
+            <img
+              className={styles.ckSummaryImg}
+              src={selectedCrop.images[0]}
+              alt={`Image of ${selectedCrop.name}`}
+              loading="lazy"
+            />
+            <div className={styles.ckSummaryDetails}>
+              <h4 className={styles.ckSummaryName}>{selectedCrop.name}</h4>
+              <span className={styles.ckSummaryCat}>
+                {selectedCrop.category}
+              </span>
+            </div>
+          </div>
+
+          <div className={styles.ckSummaryBreakdown}>
+            <div className={styles.ckSummaryRow}>
+              <span>Price</span>
+              <span>₹{selectedCrop.price.toFixed(2)}</span>
+            </div>
+            {selectedCrop.discount > 0 && (
+              <div className={styles.ckSummaryRowDiscount}>
+                <span>Discount ({selectedCrop.discount}%)</span>
+                <span>
+                  -₹
+                  {(selectedCrop.price - discountedPrice).toFixed(2)}
+                </span>
+              </div>
+            )}
+            <div className={styles.ckSummaryDivider} />
+            <div className={styles.ckSummaryRowTotal}>
+              <span>Total</span>
+              <span>₹{discountedPrice}</span>
+            </div>
+          </div>
+        </aside>
+      </main>
     </div>
   );
 };

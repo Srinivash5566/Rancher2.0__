@@ -10,11 +10,9 @@ const Community = () => {
   const navigate = useNavigate();
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
-  const { isLoggedIn, logout } = useAuth(); // Access isLoggedIn and logout from context
-  // eslint-disable-next-line no-unused-vars
-  const [search, setSearch] = useState("");
+  const { isLoggedIn, logout } = useAuth();
+  const [loading, setLoading] = useState(null);
 
-  // Check if user is logged in and load messages
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -27,12 +25,14 @@ const Community = () => {
     fetchData();
   }, []);
 
-  const handleSendMessage = async () => {
+  const handleSendMessage = async (e) => {
+    if (e && e.preventDefault) e.preventDefault();
     if (!isLoggedIn) {
       alert("You need to be logged in to send messages");
       return;
     }
     if (newMessage.trim()) {
+      setLoading("Loading...");
       const newMsg = {
         msgId:
           messages.length > 0
@@ -44,13 +44,13 @@ const Community = () => {
       try {
         await api.post("/userMsg/Msg", newMsg);
         const res = await api.get("/userMsg/getMsg");
-        console.log(res);
-
         setMessages(res.data);
         setNewMessage("");
       } catch (err) {
         console.error("Error sending message:", err);
         alert("Failed to send message");
+      } finally {
+        setLoading(null);
       }
     }
   };
@@ -68,13 +68,18 @@ const Community = () => {
 
   return (
     <div className={component.community}>
-      {/* ================= HEADER ================= */}
+      {loading && (
+        <div className={component.model} role="alert" aria-busy="true">
+          <div className={component.overlayDiv}>
+            <h1 className={component.loading}>{loading}</h1>
+          </div>
+        </div>
+      )}
       <header className="header">
-        <div className="logo">🌱 FarmFusion AI</div>
-
+        <div className="logo">Rancher</div>
         <div className="icbtmBox">
           <Theme />
-          <div className="auth-buttons">
+          <nav className="auth-buttons" aria-label="Authentication">
             {isLoggedIn ? (
               <button className="log-out" onClick={logout}>
                 Log Out
@@ -95,12 +100,11 @@ const Community = () => {
                 </button>
               </>
             )}
-          </div>
+          </nav>
         </div>
       </header>
 
-      {/* ================= NAV ================= */}
-      <nav className={component.nav_bar}>
+      <nav className={component.nav_bar} aria-label="Main Navigation">
         <Link to="/" className={component.nav_link_in}>
           RancherAI
         </Link>
@@ -112,60 +116,65 @@ const Community = () => {
         </Link>
       </nav>
 
-      {/* ================= CHAT AREA ================= */}
-      <div className={component.chat_container}>
-        {/* Welcome message */}
+      <main className={component.chat_container} role="log" aria-live="polite">
         {messages.length === 0 && (
-          <div className={component.chat_message}>
-            <div className={component.message_header}>🌱 FarmFusion AI</div>
+          <article className={component.chat_message}>
+            <header className={component.message_header}>Rancher</header>
             <div className={component.message_body}>
               Hello Farmer 👋 <br />I can help you with crop selection, soil
               health, pests, irrigation, weather insights, and farming
               equipment.
             </div>
-          </div>
+          </article>
         )}
 
-        {/* Chat Messages */}
         {messages.map((msg) => {
           const isUser = msg.userName === localStorage.getItem("userName");
-
           return (
-            <div
+            <article
               key={msg.msgId}
               className={
                 isUser ? component.user_message : component.chat_message
               }
             >
-              <div className={component.message_header}>
-                {isUser ? "👨‍🌾 You" : "🌱 FarmFusion AI / Community"}
-
+              <header className={component.message_header}>
+                {isUser ? "👨‍🌾 You" : "✨Rancher"}
                 {isUser && (
                   <MdDelete
                     onClick={() => delMsg(msg.msgId)}
-                    style={{ cursor: "pointer", marginLeft: "8px" }}
+                    style={{
+                      cursor: "pointer",
+                      marginLeft: "8px",
+                      fontSize: "16px",
+                    }}
                     title="Delete message"
+                    aria-label="Delete your message"
+                    role="button"
+                    tabIndex={0}
                   />
                 )}
-              </div>
-
+              </header>
               <div className={component.message_body}>{msg.Msg}</div>
-            </div>
+            </article>
           );
         })}
-      </div>
+      </main>
 
-      {/* ================= INPUT ================= */}
-      <div className={component.message_input_container}>
-        <input
-          type="text"
-          placeholder="Ask FarmFusion AI about crops, soil, weather, pests..."
-          value={newMessage}
-          onChange={(e) => setNewMessage(e.target.value)}
-          onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
-        />
-        <button onClick={handleSendMessage}>Send</button>
-      </div>
+      <section aria-label="Message Input Area">
+        <form
+          className={component.message_input_container}
+          onSubmit={handleSendMessage}
+        >
+          <input
+            type="text"
+            placeholder="Ask Rancher AI about crops, soil, weather, pests..."
+            value={newMessage}
+            onChange={(e) => setNewMessage(e.target.value)}
+            aria-label="New message input"
+          />
+          <button type="submit">Send</button>
+        </form>
+      </section>
     </div>
   );
 };
