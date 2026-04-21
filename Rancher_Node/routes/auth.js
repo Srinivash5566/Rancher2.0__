@@ -4,6 +4,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
 const User = require("../models/user.model");
+require("dotenv").config();
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
@@ -14,8 +15,8 @@ const transporter = nodemailer.createTransport({
   port: 587,
   secure: false,
   auth: {
-    user: "rancher.akenterprise@gmail.com",
-    pass: "ddgm yfjv nzzd axjd",
+    user: process.env.SMTP_MAIL,
+    pass: process.env.APP_PASS,
   },
 });
 // send OTP
@@ -28,7 +29,7 @@ router.post("/sendOtp", async (req, res) => {
   OTP = Math.floor(1000 + Math.random() * 9000);
   console.log("Generated OTP:", OTP); // For debugging purposes
   const mailOps = {
-    from: "rancher.akenterprise@gmail.com",
+    from: process.env.SMTP_MAIL,
     to: email,
     subject: "One Time Password (OTP)",
     text: `Your One Time Password (OTP) is ${OTP}`,

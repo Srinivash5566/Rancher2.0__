@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+require("dotenv").config();
 const UserMsg = require("../models/userMsg.model");
 
 function generateTimeId() {
@@ -18,8 +19,7 @@ function generateTimeId() {
 // POST route for creating a new message
 router.post("/Msg", async (req, res) => {
   const { userName, Msg } = req.body;
-  const apiKey =
-    "________________________Enter The Api Key________________________";
+  const apiKey = process.env.AI_API_KEY;
   const model = "models/gemini-2.5-flash";
   try {
     const newUserMsg = new UserMsg({ msgId: generateTimeId(), userName, Msg });
@@ -61,7 +61,7 @@ Your task:
             },
           ],
         }),
-      }
+      },
     );
 
     const data = await AIres.json();
