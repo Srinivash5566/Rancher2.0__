@@ -10,7 +10,7 @@ yarn-error.log*
 # Build output
 /dist
 /build
-
+.env
 # Dependency directories
 /.pnp
 .pnp.js
